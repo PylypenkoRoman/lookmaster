@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700')
+@import '../node_modules/normalize.css/normalize.css';
+
+ //Common styles
+@import 'assets/styles/_variables.styl';
+@import 'assets/styles/ui-elements/typography.styl';
+@import 'assets/styles/ui-elements/button.styl';
+@import 'assets/styles/ui-elements/form.styl';
+@import 'assets/styles/ui-elements/tabs.styl';
+@import 'assets/styles/ui-elements/checkbox.styl';
+@import 'assets/styles/ui-elements/dropdown.styl';
+@import 'assets/styles/ui-elements/profile.styl';
+
+
+html
+  height: 100%
+
+html,
+body,
+lm-root
+  min-height: 100%
+  display: flex
+  flex: 1
+  flex-direction: column
+
+body
+  // font-family: 'FuturaPT-Medium'
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  line-height: 1
+  background-color: #fff
+  position: relative
+  color: $black
+  display: flex
+  &.overflow-hidden
+    overflow: hidden
+
+.page-wrapper
+  display: flex
+  flex: 1
+  flex-direction: column
+  position: relative
+  box-sizing: border-box
+  padding: 0 25px
+  width: 100%
+  &.with-nav-bar
+    padding-bottom: 50px
+  &.with-bottom-button
+    padding-bottom: 70px
+
+.content
+  flex: 1
+  display: flex
+  flex-direction: column
+  box-sizing: border-box

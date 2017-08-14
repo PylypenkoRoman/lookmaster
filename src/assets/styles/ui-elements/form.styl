@@ -1,0 +1,116 @@
+@import '../_variables.styl'
+
+.form-control-wrapper
+  &.phone
+    max-width: 220px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    .form-control
+      text-align: left
+      flex: 1 1 auto
+      padding-left: 52px
+    &:before
+      content: "+38"
+      position absolute
+      color: $gray-light
+      left: 0
+      font-family: 'FuturaPT-Book'
+      font-size: 26px
+      font-weight: normal
+      line-height: 1
+      letter-spacing: -0.2px
+      flex: 0 1 auto
+  &.password
+    display: block
+.form-control
+  height: 50px
+  background-color: #fff
+  border: 0
+  border-bottom: solid 1px $beige
+  padding: 0 0 23px 0
+  outline: 0
+  box-sizing: border-box
+  display: block
+  width: 100%
+  appearance: none
+  font-family: 'FuturaPT-Book'
+  font-size: 26px
+  font-weight: normal
+  line-height: 1
+  letter-spacing: -0.2px
+  color: $black
+  &::placeholder
+    color: $gray-light
+  &.middle
+    text-align: center
+    padding: 0 12px
+    border: 0
+
+
+.textarea
+  height: 130px
+  background-color: #fff
+  border: 0
+  border-bottom: solid 1px $beige
+  padding: 0 0 23px 0
+  outline: 0
+  box-sizing: border-box
+  display: block
+  width: 100%
+  appearance: none
+  font-family: 'FuturaPT-Book'
+  font-size: 26px
+  font-weight: normal
+  line-height: 1.33
+  letter-spacing: -0.2px
+  color: $black
+  &::placeholder
+    color: $gray-light
+
+.label
+  display: block
+  margin-bottom: 10px
+  font-family: 'FuturaPT-Demi'
+  font-size: 12px
+  letter-spacing: -0.3px
+  color: $red
+  &.center
+    text-align: center
+
+.error-text
+  margin-top: 10px
+  display block
+  font-size: 12px
+  font-weight: 500
+  letter-spacing: -0.2px
+  color: $red
+  &.center
+    text-align: center
+
+.search
+  position: relative
+  &__input
+    height: 45px
+    background-color: #f2f2f2
+    padding: 0 0 0 45px
+    display: block
+    width: 100%
+    border: 0
+    outline: 0
+    font-family: 'FuturaPT-Medium'
+    font-weight: 500
+    line-height: 1.0
+    letter-spacing: -0.2px
+    text-align: left
+    color: $black
+  &__icon
+      font-size: 15px
+      position: absolute
+      top: 15px
+      left: 20px
+      width: 15px
+      height: 15px
+      color: $gray
+

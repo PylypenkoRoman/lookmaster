@@ -1,0 +1,81 @@
+@import '../../../../assets/styles/_variables.styl'
+
+:host
+  flex: 1
+  display: flex
+  .page-wrapper
+    padding-top: 25px
+
+.search-tag-list
+  padding-bottom: 25px
+  border-bottom: 1px solid $beige
+  margin-bottom: 25px
+  &__item
+    font-family: 'FuturaPT-Demi'
+    font-size: 24px
+    line-height: 32px
+    letter-spacing: normal
+    display: block
+    margin-bottom: 10px
+    color: $gray-light
+    &:last-child
+      margin-bottom: 0
+
+
+.search-categories
+  padding-top: 26px
+  border-bottom: 1px solid $beige
+  padding-bottom: 5px
+  &__header
+    margin-bottom: 26px
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__title
+    display: block
+    font-family: 'FuturaPT-Demi'
+    font-size: 12px
+    letter-spacing: -0.3px
+    color: $red
+    margin: 0
+  &__all
+    @extend .active-btn
+  &__list
+    display: flex
+    margin: 0 -10px 25px
+    flex-wrap: wrap
+  &__item
+    margin-bottom: 20px
+    padding: 0 10px
+    width: 50%
+    box-sizing: border-box
+  &__img-wrapper
+    width: 125px
+    height: 150px
+    margin-bottom: 10px
+  &__img
+    display: block
+    width: 100%
+    height: 100%
+  &__item-title
+    margin: 0 0 4px
+    @extend .text
+  &__text
+    @extend .sub-text
+
+
+.top-request
+  &__title
+    @extend .sub-title
+    color: $red
+    margin-bottom: 20px
+  &__item
+    font-family: 'FuturaPT-Demi'
+    font-size: 24px
+    line-height: 31px
+    cursor: pointer
+    letter-spacing: -0.2px
+    color: $black
+    display: block
+    text-decoration: none
+    margin-bottom: 15px

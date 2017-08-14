@@ -1,0 +1,23 @@
+<form class="info-form">
+  <div class="row">
+    <label class="label">Post Title</label>
+    <div class="form-control-wrapper">
+      <input type="text" [(ngModel)]="postTitle" name="postTitle" 
+            required #psTitle="ngModel" class="form-control"/>
+    </div>
+  </div>
+  <div class="row">
+    <label class="label">Post Content</label>
+    <textarea type="Text" rows="15" name="content" id="content" [(ngModel)]="content"
+    placeholder="Теги" required #psContent="ngModel" class="textarea"></textarea>
+  </div>
+  <div class="row">
+    <label class="label"></label>
+    <div class="form-control-wrapper">
+      <input type="file" (change)="fileLoad($event)"/><br>
+      <img *ngIf="imageSRC" [src]="imageSRC" alt="Image preview..."> 
+    </div>
+  </div>
+  <button class="button large" (click)="createPost()" [disabled]="!psContent.valid || !psTitle.valid ">Create Post</button>
+  <button class="button large" (click)="cancel()">Cancel</button>
+</form>

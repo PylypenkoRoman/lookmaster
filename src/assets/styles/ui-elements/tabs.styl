@@ -1,0 +1,59 @@
+@import '../_variables.styl'
+
+.tabs
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  &__item
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: -0.2px
+    color: $black
+    padding: 10px
+    cursor: pointer
+
+.radio-tabs
+  display: flex
+  align-items: bottom
+  &__item
+    display: block
+  &__label
+    padding: 16px 12px
+    line-height: 18px
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: -0.2px
+    text-align: center
+    color: $gray
+    position: relative
+    display: block
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+      color $black
+      &:after
+        background: $red
+    &:after
+      content: ""
+      height: 3px
+      background: transparent
+      left: 0
+      right: 0
+      bottom: 0
+      transition: 0.3s
+      width: 100%
+      position: absolute
+      &:hover:after
+        background: $gray
+  input[type="radio"]
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+    &:checked + .radio-tabs__label
+      color: $black
+    &:checked + .radio-tabs__label:after
+      background: $red

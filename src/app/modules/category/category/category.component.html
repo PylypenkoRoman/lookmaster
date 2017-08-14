@@ -1,0 +1,35 @@
+<lm-header></lm-header>
+<div class="page-wrapper with-nav-bar">
+  <div class="header">
+    <h1 class="page-title">Категории</h1>
+    <div class="tabs">
+      <div class="tabs__item" (click)="chooseTab('')">Manage category</div>
+      <div class="tabs__item" (click)="chooseTab('add')">Add category</div>
+    </div>
+  </div>
+  <div class="content">
+      <div class="category" [ngSwitch]="tabChoise">
+        <div *ngSwitchCase="'add'">
+            <lm-category-add (onChanged)="onChanged($event)"></lm-category-add>
+        </div>
+        <div *ngSwitchDefault>
+          <div *ngIf="categoryList">
+            <ul *ngFor="let category of categoryList" class="category__list" >
+              <li class="category__item">
+                <div class="category__img-wrapper">
+                  <img [src]="category.img" class="category__img"/>
+                </div>
+                <h4 class="category__item-title">{{category.title}}</h4>
+                <div class="category__btn-group"> 
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="!categoryList">
+            <p>У вас нет ни одной категории. Добавьте категории</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <lm-navbar></lm-navbar>
+</div>

@@ -1,0 +1,30 @@
+<div class="page-wrapper with-nav-bar">
+  <div class="header">
+    <div (click)="cancel()" class="back-btn">
+      <lm-svg-icon glyph="arrow-right"></lm-svg-icon>
+    </div>  
+  </div>
+  <div class="content">
+    <form class="form">
+      <div class="row">
+        <p class="text">Введіть свою пошту та пароль для входу</p>
+      </div>
+      
+      <div class="row">
+        <div class="form-control-wrapper">
+          <input type="Email" placeholder="Mail" id="email" [(ngModel)]="email" 
+                  required name="email" class="form-control middle"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-control-wrapper">
+          <input type="password" placeholder="Пароль" name="password1" id="password1" [(ngModel)]="password1" 
+             class="form-control middle"/>
+        </div>
+      </div>
+
+      <div (click)="login()" class="button large fixed-bottom">Спочатку заповніть поле</div>
+    </form>
+  </div>
+</div>

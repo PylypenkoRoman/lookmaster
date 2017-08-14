@@ -1,0 +1,30 @@
+//$mobile-portrait = 320px
+//$mobile-landscape = 480px
+//$tablet-portrait = 768px
+//$tablet-landscape = 1024px
+//$desktop = 1280px
+//$middle-desktop = 1366px
+//$large-desktop = 1680px
+
+respond-to(media)
+  if (media == 'mobile-portrait')
+    @media only screen and (max-width: $mobile-landscape - 1)
+      {block}
+  else if (media == 'mobile-landscape')
+    @media only screen and (max-width: $tablet-portrait - 1)
+      {block}
+  else if (media == 'tablet-portrait')
+    @media only screen and (max-width: $tablet-landscape - 1)
+      {block}
+  else if (media == 'tablet-landscape')
+    @media only screen and (max-width: $desktop - 1)
+      {block}
+  else if (media == 'desktop')
+    @media only screen and (max-width: $middle-desktop - 1)
+      {block}
+  else if (media == 'middle-desktop')
+    @media only screen and (max-width: $large-desktop - 1)
+      {block}
+  else if (media == 'large-desktop')
+    @media only screen and (min-width: $large-desktop)
+      {block}

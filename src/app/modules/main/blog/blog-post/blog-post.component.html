@@ -1,0 +1,15 @@
+<lm-header></lm-header>
+<div class="page-wrapper with-nav-bar">
+  <div class="header">
+    <h1 class="page-title">{{singlePost?.title}}</h1>
+  </div>
+  <div class="content">
+    <div class="blog__img-wrapper">
+      <img [src]="singlePost?.img" class="blog__img">
+    </div>
+    <p class="blog__text">
+      {{singlePost?.content}}
+    </p>
+  </div>
+  <lm-navbar></lm-navbar>
+</div>

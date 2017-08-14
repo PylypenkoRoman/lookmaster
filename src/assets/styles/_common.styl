@@ -1,0 +1,154 @@
+// @font-face
+//   font-family: 'FuturaPT-Medium'
+//   src url('../fonts/FuturaPT-Medium.eot')
+//   src local('FuturaPT'), local('FuturaPT'),
+// //   url('../fonts/FuturaPT-Medium.eot?#iefix') format('embedded-opentype'),
+// // url('../fonts/FuturaPT-Medium.woff2') format('woff2'),
+// // url('../fonts/FuturaPT-Medium.woff') format('woff'),
+// // url('../fonts/FuturaPT-Medium.ttf') format('truetype'),
+// // url('../fonts/FuturaPT-Medium.svg#FuturaPT-Medium') format('svg')
+
+// @font-face
+//   font-family: 'FuturaPT-Book'
+//   src url('../fonts/FuturaPT-Book.eot')
+//   src local('FuturaPT-Book'), local('FuturaPT-Book'),
+//   // url('../fonts/FuturaPT-Book.eot?#iefix') format('embedded-opentype'),
+//   // url('../fonts/FuturaPT-Book.woff2') format('woff2'),
+//   // url('../fonts/FuturaPT-Book.woff') format('woff'),
+//   // url('../fonts/FuturaPT-Book.ttf') format('truetype'),
+//   // url('../fonts/FuturaPT-Book.svg#FuturaPT-Book') format('svg')
+
+// @font-face
+//   font-family: 'FuturaPT-Demi'
+//   src url('../fonts/FuturaPT-Demi.eot')
+//   src local('FuturaPT-Demi'), local('FuturaPT-Demi'),
+//   // url('../fonts/FuturaPT-Demi.eot?#iefix') format('embedded-opentype'),
+//   // url('../fonts/FuturaPT-Demi.woff2') format('woff2'),
+//   // url('../fonts/FuturaPT-Demi.woff') format('woff'),
+//   // url('../fonts/FuturaPT-Demi.ttf') format('truetype'),
+//   // url('../fonts/FuturaPT-Demi.svg#FuturaPT-Demi') format('svg')
+
+
+
+
+
+
+//Text extentions
+.main-title
+  font-size: 26px
+  font-weight: bold
+  letter-spacing: -0.4px
+  margin: 0
+.title
+  // font-family: 'FuturaPT-Demi'
+  font-size: 24px
+  font-weight: normal
+  letter-spacing: -0.2px
+  margin: 0
+.sub-title
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: -0.2px
+  margin: 0
+.sub-text
+  font-size: 12px
+  font-weight: 500
+  letter-spacing: -0.1px
+  color: $gray-light
+  display: block
+.text
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: -0.2px
+
+.common-container
+  max-width: 1180px
+  margin: 0 auto
+  box-sizing: border-box
+  +respond-to(tablet-landscape)
+    max-width: 1024px
+  +respond-to(tablet-portrait)
+    max-width: 100%
+.add-nav
+  &__item
+    height: 70px
+    box-sizing: border-box
+    // font-family: 'FuturaPT-Book'
+    font-size: 22px
+    line-height: 1
+    letter-spacing: -0.2px
+    color: $black
+    border-bottom: 1px solid $beige
+    display: flex
+    align-items: center
+    justify-content: space-between
+    cursor: pointer
+    lm-svg-icon
+      color: $gray
+      font-size: 20px
+      width: 20px
+      height: 20px
+
+.active-btn
+    font-size: 12px
+    font-weight: 500
+    color: $black
+    cursor: pointer
+    display: flex
+    align-items: center
+    lm-svg-icon
+      width: 12px
+      height: 12px
+      font-size: 12px
+      background-color: $red
+      margin-left: 4px
+
+.back-btn
+  height: 50px
+  width: 50px
+  background: #fff
+  border: 0
+  display: flex
+  cursor: pointer
+  align-items: center
+  justify-content: center
+  padding: 0
+  position: relative
+  background: red
+  .moved-left
+    left: -20px
+  lm-svg-icon
+    width: 20px
+    height: 20px
+    color: $black
+    font-size: 20px
+    transform: rotate(180deg)
+
+.close-btn
+  height: 50px
+  width: 50px
+  background: #fff
+  border: 0
+  display: flex
+  cursor: pointer
+  align-items: center
+  justify-content: center
+  padding: 0
+  position: relative
+  lm-svg-icon
+    width: 20px
+    height: 20px
+    color: $black
+    font-size: 20px
+
+.moved-left
+  left: -20px
+.moved-right
+  right: -20px
+
+.form-preview-image
+  display: block
+  max-height: 200px
+  width: auto
+  max-width: 100%
+  margin-bottom: 20px

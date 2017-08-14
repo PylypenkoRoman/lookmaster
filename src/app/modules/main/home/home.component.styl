@@ -1,0 +1,397 @@
+@import '../../../../assets/styles/_variables.styl'
+
+:host
+  flex: 1
+  display: flex
+  .page-wrapper
+    padding: 0
+
+.jumbotron
+  height: 950px
+  background: #fe0325
+  padding: 312px 20px 29px
+  position: relative
+  overflow: hidden
+  box-sizing: border-box
+  +respond-to(tablet-landscape)
+    height: 850px
+    padding: 259px 20px 29px
+  +respond-to(tablet-portrait)
+    height: 760px
+    padding: 220px 20px 29px
+  +respond-to(mobile-landscape)
+    height: 460px
+    padding: 100px
+  &__img-wrapper
+    position: absolute
+    right: 0
+    top: 0
+  &__img
+    width: auto
+    height: 1000px
+    +respond-to(tablet-landscape)
+      height: 850px
+    +respond-to(tablet-portrait)
+      height: 760px
+    +respond-to(mobile-landscape)
+      height: 460px
+  &__text-block
+    margin: 0 auto 108px
+    max-width: 980px
+    position: relative
+    z-index: 2
+    +respond-to(tablet-portrait)
+      max-width: 700px
+    +respond-to(mobile-landscape)
+      margin: 0 auto
+      padding-top: 185px
+  &__title
+    font-size: 92px
+    font-weight: 800
+    font-style: normal
+    font-stretch: normal
+    line-height: 0.82
+    letter-spacing: -2.5px
+    margin-bottom: 30px
+    max-width: 500px
+    color: #fff
+    +respond-to(mobile-landscape)
+      font-size: 32px
+      font-weight: 800
+      line-height: 1.0
+      letter-spacing: -0.5px
+      margin-bottom: 15px
+  &__sub-title
+    font-size: 32px
+    font-weight: 500
+    letter-spacing: -0.6px
+    text-align: left
+    color: #fff
+    +respond-to(mobile-landscape)
+      font-size: 14px
+      font-weight: 500
+      line-height: 1.0
+      letter-spacing: -0.2px
+  lm-header
+    top: 0
+    left: 0
+    right: 0
+    position: fixed
+  lm-search-box
+    position: relative
+    z-index: 2
+    display: block
+    max-width: 980px
+    margin: 0 auto
+    +respond-to(tablet-portrait)
+      max-width: 700px
+    +respond-to(mobile-landscape)
+      display: none
+
+.top-request
+  padding: 90px 0 145px
+  +respond-to(mobile-landscape)
+    padding: 40px 0
+  &__container
+    box-sizing: border-box
+    @extend .common-container
+    +respond-to(tablet-landscape)
+      max-width: 940px
+    +respond-to(tablet-portrait)
+      padding: 0 25px
+  &__title
+    font-size: 38px
+    line-height: 1.0
+    letter-spacing: -1.5px
+    color: $black
+    font-weight: bold
+    padding-left: 200px
+    position: relative
+    margin-bottom: 100px
+    max-width 340px
+    +respond-to(mobile-landscape)
+      font-size: 20px
+      font-weight: 800
+      line-height: 1.0
+      letter-spacing: -0.3px
+      padding-left: 70px
+      margin-bottom: 50px
+    &:before
+      content: ""
+      width 180px
+      height: 1px
+      left: 0
+      display: block
+      top: 10px
+      background: $black
+      position: absolute
+      +respond-to(mobile-landscape)
+        width 53px
+  &__list
+    columns: 3
+    column-gap: 40px
+    +respond-to(tablet-portrait)
+      columns: 2
+      column-gap: 20px
+    +respond-to(mobile-landscape)
+      columns: 2
+    +respond-to(mobile-portrait)
+      columns: 1
+  &__icon-wrapper
+      background: $black
+      width: 125px
+      height: 125px
+      display: flex
+      align-items: center
+      justify-content: center
+      overflow: hidden
+      border-radius: 50%
+      margin: 0 auto 20px
+      lm-svg-icon
+        font-size: 70px
+        height 70px
+        width 70px
+        color: #fff
+  &__item
+    overflow: hidden
+    position: relative
+    margin-bottom: 40px
+    display: inline-flex
+    box-sizing: border-box
+    width: 100%
+    +respond-to(tablet-portrait)
+      margin-bottom: 30px
+    &.icon-item
+      text-align center
+      padding: 100px 35px
+      +respond-to(tablet-portrait)
+        padding: 80px 35px
+      +respond-to(mobile-landscape)
+        padding: 0
+      .top-request__text-block
+        position: static
+        width: 100%
+        +respond-to(mobile-landscape)
+          padding: 0
+      .top-request__item-title
+        font-size: 18px
+        font-weight: 800
+        line-height: 1.11
+        letter-spacing: -0.6px
+        text-align: center
+        color: $black
+        text-transform uppercase
+      .top-request__text
+        font-size: 14px
+        font-weight: 500
+        letter-spacing: -0.4px
+        text-align: center
+        color: $gray
+        margin-bottom: 10px
+    &.light-background
+          .top-request__item-title
+            color: $black
+          .top-request__text
+            color: $black
+  &__img
+    width: 100%
+    height: 100%
+    display: block
+  &__text-block
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    padding: 35px
+    box-sizing: border-box
+  &__item-title
+    font-size: 24px
+    font-weight: 800
+    line-height: 1.08
+    letter-spacing: -0.8px
+    color: #fff
+    margin-bottom: 15px
+    +respond-to(tablet-portrait)
+      font-size: 16px
+      line-height: 1.25
+      letter-spacing: -0.5px
+      margin-bottom: 10px
+  &__text
+    font-family: 'FuturaPT-Book'
+    font-size: 20px
+    line-height: 1.1
+    letter-spacing: -0.2px
+    color: #fff
+    +respond-to(tablet-portrait)
+      font-size: 14px
+      font-weight: 500
+
+.about-master
+  background: #ff0325
+  position: relative
+  padding-top: 20px
+  +respond-to(tablet-landscape)
+    padding-top: 100px
+  +respond-to(tablet-portrait)
+    padding: 46px 30px 0
+  &:before
+    background: url("../../../../assets/img/pattern.jpg") repeat
+    position: absolute
+    content: " "
+    top: 0
+    bottom: 0
+    right: 0
+    display: block
+    height: 100%
+    width: 50%
+    z-index: 1
+    +respond-to(tablet-portrait)
+      height: 100%
+      width: 100%
+      left: 0
+  &__content
+    @extend .common-container
+    position: relative
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    z-index: 2
+    +respond-to(tablet-portrait)
+      flex-direction: column
+      align-items: center
+  &__text-block
+    top: 208px
+    position: absolute
+    right: 50%
+    margin-right: 275px
+    +respond-to(middle-desktop)
+      margin-right: 202px
+    +respond-to(tablet-landscape)
+      margin-right: 180px
+      top: 95px
+    +respond-to(tablet-portrait)
+      position: static
+      margin: 0
+      top: 0
+      display: flex
+      justify-content: center
+      flex-direction: column
+    .button
+      background: $black
+      color: #fff
+      +respond-to(tablet-portrait)
+        margin-bottom: 25px
+  &__title
+    font-size: 62px
+    font-weight: 800
+    line-height: 0.97
+    letter-spacing: -2.7px
+    margin-bottom: 27px
+    color: #fff
+    max-width: 315px
+    position: relative
+    +respond-to(tablet-portrait)
+      text-align: center
+      font-size: 32px
+      line-height: 1.0
+      letter-spacing: -0.5px
+      margin-bottom: 15px
+    &:before
+      content: ""
+      width: 80px
+      height: 1px
+      top: 20px
+      position: absolute
+      left: -100px
+      background: #fff
+      +respond-to(tablet-landscape)
+        display: none
+  &__text
+    font-size: 20px
+    line-height: 1.4
+    letter-spacing: -0.2px
+    margin-bottom: 42px
+    color: #fff
+    max-width: 315px
+    +respond-to(tablet-portrait)
+      text-align: center
+      font-size: 14px
+      font-weight: 500
+      line-height: 1.29
+      max-width: 212px
+      margin-bottom: 30px
+  &__img-wrapper
+    width: 550px
+    overflow: hidden
+    flex: 0 1 auto
+    +respond-to(tablet-landscape)
+      width: 470px
+    +respond-to(tablet-portrait)
+      width: 100%
+      max-width: 260px
+  &__img
+    width: 100%
+    height: auto
+    display: block
+  &__history-block
+    top: 226px
+    position: absolute
+    left: 50%
+    margin-left: 275px
+    +respond-to(tablet-landscape)
+      margin-left: 235px
+      top: 112px
+    +respond-to(tablet-portrait)
+      display: none
+  &__history
+    font-size: 18px
+    font-weight: 500
+    line-height: 1.22
+    color: #fff
+    max-width: 180px
+    letter-spacing: -0.4px
+    margin: 0 0 12px
+    position: relative
+    padding-left: 54px
+    +respond-to(tablet-landscape)
+      padding-left: 15px
+    &:before
+      content: ""
+      width: 56px
+      height: 1px
+      top: 10px
+      opacity: 0.5
+      position: absolute
+      left: -77px
+      background: #fff
+  &__name
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: 2px
+    color: #fff
+    text-transform: uppercase
+    padding-left: 54px
+    +respond-to(tablet-landscape)
+      padding-left: 15px
+
+
+.best-masters
+  @extend .common-container
+  padding: 140px 0
+  +respond-to(mobile-landscape)
+    display: none
+  &__title
+    font-family: 'FuturaPT-Demi'
+    font-size: 18px
+    line-height: 1.78
+    letter-spacing: -0.6px
+    align-items: left
+    color: $black
+    margin-bottom: 40px
+  &__slider
+    overflow: hidden
+    display: flex
+    justify-content: space-between
+  ls-master-card
+    width: 25%
+    margin: 0 10px

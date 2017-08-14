@@ -1,0 +1,43 @@
+<div class="page-wrapper with-nav-bar">
+  <div class="signup">
+    <div class="signup__header">
+
+      <div class="radio-tabs">
+        <div class="radio-tabs__item">
+          <input type="radio" name="userRole" (ngModelChange)="saveRole($event)"
+          [(ngModel)]="userRole" value="client"  id="client"/>
+          <label for="client" class="radio-tabs__label" >Я кліент</label>
+        </div>
+        <div class="radio-tabs__item">
+          <input type="radio" name="userRole" (ngModelChange)="saveRole($event)"
+          value="master" [(ngModel)]="userRole" id="master"/>
+          <label for="master" class="radio-tabs__label" >Я майстер</label>
+        </div>
+      </div>
+
+      <div class="signup__controls"><a routerLink="/login" class="login-btn">Вхід</a>
+        <button class="close-btn">
+          <lm-svg-icon glyph="cross"></lm-svg-icon>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="signup__content">
+      <h1 class="signup__title">Створіть акаунт в один клік</h1>
+      <h2 class="signup__sub-title">Продовжіть реєстрацію через соціальну мережу</h2>
+      <div class="signup__button-group">
+        <div class="button rounded facebook">
+          <lm-svg-icon glyph="facebook" class="social-icon"></lm-svg-icon>Facebook
+        </div>
+        <div class="button rounded vkontakte">
+          <lm-svg-icon glyph="vkontakte" class="social-icon"></lm-svg-icon>Вконтакте
+        </div>
+      </div>
+      <span (click)="saveRole()" routerLink="/signup/form" class="signup__link">Через Email та пароль</span>
+      
+    </div>
+
+  </div>
+  <lm-navbar></lm-navbar>
+</div>

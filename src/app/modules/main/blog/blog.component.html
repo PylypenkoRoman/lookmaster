@@ -1,0 +1,20 @@
+<lm-header></lm-header>
+<div class="page-wrapper with-nav-bar">
+  <div class="header">
+    <h1 class="page-title">Блог</h1>
+  </div>
+  <div class="content">
+    <div class="blog" *ngFor="let posts of blogPost">
+      <div class="blog__post">
+        <div class="singlePost">
+          <img [src]="posts.img" class="blog__img">
+        </div>
+        <h2 class="blog__title" (click)="choosePost(posts)">{{posts.title}}</h2>
+        <p class="blog__text">
+          {{posts.content | truncute:140}}
+        </p>
+      </div>
+    </div> 
+  </div>
+  <lm-navbar></lm-navbar>
+</div>

@@ -1,0 +1,19 @@
+<form class="category__add-form">
+      <div class="row">
+        <label class="label">Category Title</label>
+        <div class="form-control-wrapper">
+            <input type="text" [(ngModel)]="categoryTitle" name="categoryTitle" 
+            required #catTitle="ngModel" class="form-control"/>   
+        </div>
+    </div> 
+    <div class="row">
+        <div class="form-control-wrapper">
+            <input type="file" (change)="fileLoad($event)"/><br>
+            <img class="form-preview-image" *ngIf="imageSRC" [src]="imageSRC" alt="Image preview..."> 
+        </div>
+    </div>
+    <div class="row">
+        <button class="button large" (click)="createCategory()">Create Category</button>
+        <button class="button large" (click)="cancel()">Cancel</button>
+    </div>
+</form>

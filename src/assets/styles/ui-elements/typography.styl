@@ -1,0 +1,18 @@
+@import '../_variables.styl'
+
+
+//Reusables small text blocks
+.page-title
+  margin: 0
+  padding-bottom: 25px
+  position: relative
+  @extend .main-title
+  &:after
+    width: 25px
+    height: 2px
+    background $beige
+    position: absolute
+    content: ""
+    left: 0
+    bottom: 0
+    display: block

@@ -1,0 +1,85 @@
+@import '../../../../assets/styles/_variables.styl'
+
+
+:host
+  flex: 1
+  display: flex
+  .page-wrapper
+    padding-top: 25px
+  .page-title
+    margin-bottom: 20px
+
+.notifications
+  &__item
+    padding: 25px 0
+    box-sizing: border-box
+    border-bottom: 1px solid $beige
+  &__info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 20px
+  &__img-wrapper
+    width: 40px
+    height: 40px
+    flex: none
+    margin-right: 15px
+    background: $beige
+    position: relative
+    overflow: hidden
+    border-radius: 50%
+  &__text-block
+    flex: 1
+  &__img
+    display: block
+  &__name
+    @extend .text
+    color: $black
+    margin-bottom: 3px
+    line-height: 18px
+  &__text
+    @extend .sub-text
+    line-height 16px
+  &__phone
+    font-family: 'FuturaPT-Demi'
+    font-size: 24px
+    letter-spacing: -0.2px
+    color: $black
+    margin-bottom: 15px
+    display: block
+  &__date
+    margin-right: 20px
+  &__date,
+  &__day-of-week,
+  &__time
+    font-family: 'FuturaPT-Demi'
+    font-size: 12px
+    letter-spacing: -0.3px
+    color: $red
+    display: inline-block
+
+.notifications-placeholder
+  padding: 10px 0 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  &__img
+    margin-bottom 25px
+    width: 160px
+    height: 160px
+    overflow: hidden
+    border-radius: 50%
+  &__title
+    @extend .main-title
+    text-align: center
+    margin-bottom: 10px
+  &__text
+    @extend .text
+    line-height: 1.14
+    text-align: center
+    color: $gray
+    max-width: 160px
+    margin-bottom: 25px
+  .button
+    width: 130px

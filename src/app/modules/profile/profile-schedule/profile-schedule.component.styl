@@ -1,0 +1,109 @@
+@import '../../../../assets/styles/_variables.styl'
+
+:host
+  flex: 1
+  display: flex
+  .page-wrapper
+    padding-bottom: 155px
+  .content
+    padding-top: 36px
+
+.extensions-form
+  display: block
+  .daypicker
+    margin-left: -25px
+    margin-right: -25px
+    margin-bottom: 36px
+  .daypicker
+    margin
+  &__agreement
+    background: #fff
+    height: 85px
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 70px
+    box-sizing: border-box
+    border-top: 1px solid $beige
+    padding: 0 25px
+
+
+.daypicker
+  overflow: hidden
+  position: relative
+  min-height: 80px
+  box-sizing: border-box
+  &__list
+    padding: 0 20px
+    position: absolute
+    left: 0
+    right: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    overflow-y: auto
+    padding-bottom: 20px
+  input[type="checkbox"]
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+  &__item
+    flex: 1
+    margin-right: 25px
+    &:last-child
+      margin-right: 0
+  &__label
+    cursor: pointer
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    border: 1px solid $beige
+    display: flex
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+  input[type="checkbox"]:checked + .daypicker__label
+    border-color: $red
+
+.timepicker
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  &__button
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 20px
+    height: 20px
+    border: 2px solid $gray
+    color: $gray
+    font-size: 20px
+    box-sizing: border-box
+    //lm-svg-icon
+  &__input
+    border: 0
+    display: block
+    height: 30px
+    background: transparent
+    font-family: 'FuturaPT-Demi'
+    font-size: 24px
+    letter-spacing: -0.2px
+    text-align: center
+    color: $black
+    line-height: 30px
+    width: 60px
+    margin: 10px 0
+    padding: 0
+  &__divider
+    height: 2px
+    width: 100px
+    background: $gray

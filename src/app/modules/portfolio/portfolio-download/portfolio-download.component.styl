@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/_variables.styl'
+
+:host
+  flex: 1
+  display: flex
+  .header
+    flex-direction: row-reverse
+    display: flex
+  .content
+    padding: 55px 0 36px
+  .portfolio-download
+    &__title
+      @extend .main-title
+      line-height: 1.08
+      text-align: center
+      margin: 0 auto 10px
+      //max-width: 200px
+    &__text
+      @extend .text
+      line-height: 1.14
+      color: $gray
+      text-align: center
+      margin: 0 auto 25px
+      //max-width: 210px
+    &__button-group
+      .button
+        margin-bottom: 15px
+    &__phone
+      display: block
+      text-align: center
+      padding: 15px
+      box-sizing: border-box
+      @extend .text

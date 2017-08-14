@@ -1,0 +1,85 @@
+@import '../_variables.styl'
+
+.checkbox
+  position: relative
+  display: flex
+  justify-content: space-between
+  box-sizing: border-box
+  flex-direction: column
+  padding: 15px 0 22px
+  border-bottom: 1px solid $beige
+  background: #fff
+  &__description
+    display: block
+    font-family: 'FuturaPT-Medium'
+    line-height: 16px
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: -0.1px
+    color: $gray-light
+
+  input[type="checkbox"]
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+
+  input[type="checkbox"] + .checkbox__label
+    display: block
+    padding-right: 30px
+    position: relative
+    cursor: pointer
+    line-height: 30px
+    font-family: 'FuturaPT-Book'
+    font-size: 24px
+    letter-spacing: -0.2px
+    color: $black
+  input[type="checkbox"] + .checkbox__label:before
+    width: 26px
+    height: 26px
+    border: solid 1px $beige
+    box-sizing: border-box
+    border-radius: 50%
+    position: absolute
+    right: 0
+    top: 50%
+    margin-top: -13px
+    content: ""
+    transition: 0.3s
+  input[type="checkbox"]:checked + .checkbox__label:before
+    border-color: transparent
+
+  input[type="checkbox"] + .checkbox__label lm-svg-icon
+    position: absolute
+    right: 3px
+    top: 50%
+    margin-top: -10px
+    width: 20px
+    height: 20px
+    box-sizing: border-box
+    line-height: 20px
+    transition: 0.3s
+    font-size: 20px
+    color: #fff
+  input[type="checkbox"] + .checkbox__label:hover lm-svg-icon
+    color: $gray-light
+
+  input[type="checkbox"]:checked + .checkbox__label
+    color: $elements-dark
+
+  input[type="checkbox"]:checked + .checkbox__label lm-svg-icon
+    color: $red
+
+  // Disabled checkbox
+  input[type="checkbox"]:disabled + .checkbox__label
+
+  input[type="checkbox"]:disabled + .checkbox__label
+    &:checked
+      cursor: default
+
+  input[type="checkbox"]:disabled
+    &:checked + .checkbox__label lm-svg-icon
+      background: #fff

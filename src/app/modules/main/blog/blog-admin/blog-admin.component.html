@@ -1,0 +1,60 @@
+<lm-header></lm-header>
+<div class="page-wrapper with-nav-bar">
+  <div class="header">
+    <h1 class="page-title">Блог</h1>
+    <div class="tabs">
+      <div class="tabs__item" (click)="chooseTab('')">Manage blogs</div>
+      <div class="tabs__item" (click)="chooseTab('add')">Add post</div>
+    </div>
+  </div>
+   <div class="content">
+    <div [ngSwitch]="tabChoise">
+      <div *ngSwitchCase="'add'">
+        <lm-blog-add></lm-blog-add>
+      </div>
+      <div *ngSwitchDefault>
+        <div  *ngIf="formDisplay">
+          <div class="blog" *ngFor="let posts of blogPost">
+            <div class="blog__post">
+              <div class="singlePost">
+                <img [src]="posts.img" class="blog__img">
+              </div>
+              <h2 class="blog__title">{{posts.title}}</h2>
+              <p class="blog__text">
+                {{posts.content | truncute:140}}
+              </p>
+              <button class="button large" (click)="editPost(posts)">Edit</button>
+              <button class="button large" (click)="deletePost(posts)">Delete</button>
+            </div>
+          </div>  
+        </div>
+        <div  *ngIf="!formDisplay">
+          <h2>Edit Post</h2>
+          <form class="info-form">
+            <div class="row">
+              <label class="label">Post Title</label>
+              <div class="form-control-wrapper">
+                <input type="text" [(ngModel)]="singlePost.title" name="editTitle" 
+                      required #psTitle="ngModel" class="form-control"/>
+              </div>
+            </div>
+            <div class="row">
+              <label class="label">Post Content</label>
+              <textarea type="Text" rows="15" name="editcontent" id="content" 
+              [(ngModel)]="singlePost.content"  required #psContent="ngModel" class="textarea"></textarea>
+            </div>
+            <div class="row">
+              <label class="label">Post Image</label>
+              <div class="form-control-wrapper"> 
+                <img [src]="singlePost.img" alt="Image preview..."> 
+              </div>
+            </div>
+            <button class="button large" (click)="updatePost(singlePost)" 
+            [disabled]="!psContent.valid || !psTitle.valid ">Update Post</button>
+            <button class="button large" (click)="cancelEdit()">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

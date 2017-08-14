@@ -1,0 +1,90 @@
+@import '../_variables.styl'
+
+.button
+  height: 48px
+  padding: 8px 14px
+  line-height: 20px
+  text-decoration: none
+  box-sizing: border-box
+  white-space: nowrap
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  outline: 0
+  border: 0
+  color: #fff
+  display: flex
+  font-family: 'FuturaPT-Demi'
+  font-size: 12px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  letter-spacing: -0.1px
+  text-align: center
+  user-select: none
+  background: $red
+  position: relative
+  lm-svg-icon
+    width: 14px
+    height: 14px
+    font-size: 14px
+    display: inline-block
+    line-height: 1
+    margin-right: 5px
+  &:active
+  &:disabled
+    color: $black
+    opacity: 0.8
+  &.rounded
+    border-radius: 24px
+  &.large
+    height: 70px
+    letter-spacing: -0.2px
+    font-size: 15px
+    &.rounded
+      border-radius: 35px
+  &.small
+    height: 35px
+    font-size: 11px
+    padding: 6px 14px
+    &.rounded
+      border-radius: 18px
+  &.fixed-bottom
+    position: fixed
+    bottom: 0
+    right: 0
+    left: 0
+  &.facebook
+    background $facebook
+    &:active
+      background: $facebook-active
+  &.linkedin
+    background $linkedin
+    &:active
+      background: $linkedin-active
+  &.vkontakte
+    background $vkontakte
+    &:active
+      background: $vkontakte-active
+  .social-icon
+    position: absolute
+    width: 22px
+    height: 22px
+    left: 14px
+    top: 50%
+    font-size: 22px
+    line-height: 22px
+    margin-top: -11px
+    color: #fff
+
+.button-counter
+  background: #fff
+  min-width: 22px
+  height: 16px
+  border-radius: 8px
+  line-height: 16px
+  font-size: 14px
+  text-align: center
+  color: $red
+  letter-spacing: -0.2px
+  margin-left: 5px

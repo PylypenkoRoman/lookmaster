@@ -1,0 +1,52 @@
+@import '../../../../assets/styles/_variables.styl'
+
+:host
+  flex: 1
+  display: flex
+  .content
+    justify-content: center
+
+.extensions
+  display: block
+  &__item
+    margin-bottom: 25px
+    padding-bottom: 20px
+    border-bottom: 1px solid $beige
+    &:last-child
+      margin-bottom: 0
+  &__header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+  &__title
+    display: block
+    margin-bottom: 10px
+    font-family: 'FuturaPT-Demi'
+    font-size: 12px
+    letter-spacing: -0.3px
+    color: $red
+  &__cancel-btn
+    @extend .active-btn
+  &__content
+    display: flex
+    align-items: center
+  &__portrait-wrapper
+    width: 40px
+    height: 40px
+    background-color: $beige
+    border-radius: 50%
+    overflow: hidden
+    margin-right: 15px
+  &__portrait
+    width: 100%
+    height: 100%
+    display: block
+  &__name
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: -0.2px
+    color: $black
+    line-height: 18px
+  &__info
+    @extend .sub-text
+    line-height: 16px

@@ -1,0 +1,94 @@
+@import '../../../assets/styles/_variables.styl'
+
+:host
+  flex: none
+  background: rgba($beige, 0.25)
+
+.footer
+  &__container
+    @extend .common-container
+    padding: 60px 80px 60px 0
+    +respond-to(tablet-landscape)
+      padding: 60px 110px 50px
+    +respond-to(tablet-portrait)
+      padding: 50px 30px
+  &__row
+    display: flex
+    align-items: flex-start
+    justify-content space-between
+    +respond-to(tablet-portrait)
+      flex-direction: column
+    &.align-bottom
+      align-items: flex-end
+      +respond-to(tablet-portrait)
+        align-items flex-start
+  &__column
+    display: flex
+    flex-direction: column
+  &__logo
+    cursor: pointer
+    background: red
+    font-size: 0
+    color: transparent
+    // background: url("../../../assets/img/svg/logo-footer.svg") no-repeat
+    width: 139px
+    height: 32px
+  &__social
+      margin: 30px 0 70px
+      +respond-to(tablet-portrait)
+        margin-bottom: 40px
+  &__social-item
+    font-size: 26px
+    font-weight: bold
+    letter-spacing: -0.4px
+    text-align: left
+    color: $gray-light
+    margin-bottom: 10px
+    display: block
+    cursor: pointer
+    &:last-child
+      margin-bottom 0
+  &__nav
+    padding-top: 44px
+    display: flex
+    justify-content: flex-end
+    +respond-to(tablet-landscape)
+      padding-top: 10px
+      padding-right: 75px
+    +respond-to(tablet-portrait)
+      flex-direction: column
+  &__nav-column
+      min-width: 200px
+      +respond-to(tablet-landscape)
+        min-width: 150px
+      +respond-to(tablet-portrait)
+        min-width: auto
+        margin-bottom: 50px
+  &__nav-title
+    font-family: 'FuturaPT-Demi'
+    font-size: 14px
+    text-align: left
+    color: $gray-light
+    margin-bottom: 18px
+    text-transform: uppercase
+  &__nav-item
+    @extend .text
+    margin-bottom 18px
+    &:last-child
+      margin-bottom: 0
+  &__support-mail
+    @extend .text
+    margin-bottom 18px
+  &__support-phone
+    @extend .text
+    +respond-to(tablet-portrait)
+      margin-bottom: 55px
+  &__copyright
+    @extend .text
+    color: $gray-light
+    +respond-to(tablet-portrait)
+      max-width: 200px
+
+
+
+

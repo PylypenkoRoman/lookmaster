@@ -1,0 +1,33 @@
+ <div class="work-card {{view}}">
+  <div class="work-card__header">
+    <div class="work-card__info">
+      <div class="work-card__portrait-wrapper">
+        <img [src]="workCard?.img" class="work-card__portrait"/>
+      </div>
+      <div class="work-card__name">{{workCard.userName}}</div>
+    </div>
+    <div class="work-card__subscribe-btn">Cлідкувати
+      <lm-svg-icon glyph="add"></lm-svg-icon>
+    </div>
+  </div>
+  <div class="work-card__img-wrapper"><img [src]="workCard?.img" class="work-card__img"/>
+    <div class="work-card__btn like-btn">
+      <lm-svg-icon glyph="like"></lm-svg-icon>
+    </div>
+    <!--.work-card__btn.edit-btn-->
+    <!--  lm-svg-icon(glyph="like-solid")-->
+  </div>
+  <div class="work-card__footer">
+    <div class="work-card__title">{{workCard.category}}</div>
+      <!-- <div class="work-card__tag-list" *ngFor="let tag of tagList">
+      <lm-tag>
+        <a class="work-card__tag" href="#">{{tag.text}}</a>
+      </lm-tag>
+    </div>      -->
+    <div class="work-card__tag-list">
+      <a class="work-card__tag" href="#">#InnaMakarenko</a>
+      <a class="work-card__tag" href="#">#InnaMakarenko</a>
+      <a class="work-card__tag" href="#">#InnaMakarenko</a>
+    </div>  
+  </div>
+</div> 

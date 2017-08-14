@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Camera</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="2.50009106" width="18.7506829" height="13.7505008"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18.7506829" height="13.7505008" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <ellipse id="path-3" cx="9.37534147" cy="9.37534147" rx="3.75013659" ry="3.75013659"></ellipse>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="7.50027317" height="7.50027317" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="00.Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Library" transform="translate(-2094.000000, -159.000000)">
+            <g id="Group-4-Copy-10" transform="translate(2094.000000, 159.000000)">
+                <g id="Group" transform="translate(2.671827, 3.911765)">
+                    <use id="Rectangle-7" stroke="currentColor" mask="url(#mask-2)" stroke-width="3" xlink:href="#path-1"></use>
+                    <rect id="Rectangle-8" fill="currentColor" x="0" y="0" width="5.62520488" height="1.25004553"></rect>
+                    <use id="Oval-2" stroke="currentColor" mask="url(#mask-4)" stroke-width="3" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

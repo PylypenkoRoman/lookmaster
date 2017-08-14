@@ -1,0 +1,14 @@
+
+{
+    "dest": "src/assets/styles",
+    "mode": {
+        "css": {
+            "dest": "sprites",
+            "render": {
+                "styl": {
+                    "dest": "_sprite.stylus"
+                }
+            }
+        }
+    }
+}

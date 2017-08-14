@@ -1,0 +1,68 @@
+@import '../../../assets/styles/_variables.styl'
+
+:host
+  background: #fff
+  position: fixed
+  top: 0
+  bottom: 50px
+  right: 0
+  left: 0
+  display: flex
+  z-index: 100
+
+.logo
+  cursor: pointer
+  box-sizing: border-box
+  a
+    display: flex
+    font-weight: bold
+    height: 100%
+    align-items: center
+    justify-content: center
+    text-decoration: none
+    color: $black
+    &:visited
+      color: $black
+
+.mobile-sub-nav
+  flex: 1
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  &__header
+    flex: none
+    height: 85px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 30px
+    box-sizing: border-box
+  &__content
+    flex: 1
+    flex-direction: column
+    padding: 30px
+    box-sizing: border-box
+    display: flex
+    .button
+      display: block
+      margin-top: 20px
+  &__holder
+    border-bottom: 1px solid $beige
+    margin-bottom: 20px
+    padding-bottom: 20px
+  &__item
+    text-align: left
+    color: black
+    margin-bottom: 20px
+    display: block
+    cursor: pointer
+    line-height: 21px
+    font-size: 16px
+    font-weight: 500
+    letter-spacing: -0.2px
+    text-decoration: none
+
+    &:last-child
+      margin-bottom: 0
+.close-btn
+  background: green;      

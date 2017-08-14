@@ -1,0 +1,39 @@
+<div class="page-wrapper with-bottom-button">
+  <div class="signup-mail">
+    <div class="signup-mail__header">
+      <div class="back-btn" routerLink="/signup">
+        <lm-svg-icon glyph="arrow-right"></lm-svg-icon>
+      </div>
+    </div>
+    <div class="signup-mail__content">
+      <form class="signup-mail__form">
+        <p class="signup-mail__text" (click)="showRole()">І останнє, створіть дані для входу</p>
+
+        <div class="form-control-wrapper">
+            <input type="text" placeholder="Ім'я" class="form-control middle" id="userName" required
+            name="userName" [(ngModel)]="userName"/>
+        </div>
+
+        <div class="form-control-wrapper">
+          <input type="Email" placeholder="Mail" id="email" [(ngModel)]="email" 
+                  required name="email"  class="form-control middle"/>
+        </div>
+
+        <div class="form-control-wrapper">
+          <input type="password" placeholder="Пароль" name="password1" 
+          id="password1" [(ngModel)]="password1" 
+            class="form-control middle"/>
+        </div>
+
+        <div class="form-control-wrapper">
+          <input type="password" placeholder="Повторить Пароль" name="password2" id="password2" [(ngModel)]="password2" 
+          class="form-control middle"/>
+        </div>
+        <div *ngIf="passwordFail">
+            Password do not match
+        </div>
+        <div (click)="signUp()" class="button large fixed-bottom">Спочатку заповніть поле</div>
+      </form>
+    </div>
+  </div>
+</div>

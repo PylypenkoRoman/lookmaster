@@ -1,0 +1,78 @@
+<div class="page-wrapper with-nav-bar">
+  <div class="profile">
+    <div class="profile__header">
+      <div class="profile__panel">
+        <div class="profile__panel-btn left">
+          <lm-svg-icon glyph="share"></lm-svg-icon>
+        </div>
+        <div class="profile__panel-text">Hanna Yanicka</div>
+        <div class="profile__panel-btn right">
+          <lm-svg-icon glyph="pencil" routerLink="/edit"></lm-svg-icon>
+        </div>
+      </div>
+      <!--.profile__panel.transparent-->
+      <!--  .profile__panel-btn.right-->
+      <!--    lm-svg-icon(glyph="share")-->
+      <div class="profile__wallpaper"><img src="../../../assets/img/placeholder.png" class="profile__wallpaper-img"/></div>
+      <div class="profile__info"><span class="profile__city">Львів</span>
+        <div class="profile__info-row">
+          <h1 class="profile__name">Hanna Yelevecka</h1>
+          <div class="profile__portrait"><img src="../../../assets/img/placeholder.png" class="profile__portrait-img"/></div>
+        </div>
+        <div class="profile__subscribe-btn">Cлідкувати
+          <lm-svg-icon glyph="add"></lm-svg-icon>
+        </div>
+      </div>
+    </div>
+    <div class="profile__content">
+      <div class="profile__section">
+        <div class="tag-list"><span class="tag-list__item">#InnaMakarenko</span><span class="tag-list__item">#Lviv</span><span class="tag-list__item">#Beautymaster</span></div>
+        <div class="specialty">
+          <div class="specialty__item">
+            <div class="specialty__img-wrapper"><img src="../../../assets/img/placeholder.png" class="specialty__img"/></div>
+            <div class="specialty__title">Маникюр</div>
+          </div>
+          <div class="specialty__item">
+            <div class="specialty__img-wrapper"><img src="../../../assets/img/placeholder.png" class="specialty__img"/></div>
+            <div class="specialty__title">Маникюр</div>
+          </div>
+          <div class="specialty__item">
+            <div class="specialty__img-wrapper"><img src="../../../assets/img/placeholder.png" class="specialty__img"/></div>
+            <div class="specialty__title">Маникюр</div>
+          </div>
+          <div class="specialty__item">
+            <div class="specialty__more-btn">+<span>5</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="profile__row">
+        <div class="profile__sub-title">Майстер про себе</div>
+        <p class="text">Покриття гель-лаком 100 грн, чистка 30 грн, гелеве нарощування 250 грн, Львів</p>
+      </div>
+      <div class="add-nav">
+        <div routerLink="/profile/info" class="add-nav__item">Графік
+          <lm-svg-icon glyph="arrow-right"></lm-svg-icon>
+        </div>
+      </div>
+      <div class="address">
+        <div class="address__row"><span class="address__lable">Вдома</span><span class="address__info">пр. Шевченка 5/12</span></div>
+        <div class="address__row"><span class="address__lable">В офісі</span><span class="address__info">вул. Мазепи 33/63</span></div>
+      </div>
+      <div class="profile__portfolio">
+        <div class="profile__portfolio-header">
+          <div class="profile__portfolio-title">Працюю</div>
+          <div class="profile__portfolio-all-btn">Усі роботи
+            <lm-svg-icon glyph="add"></lm-svg-icon>
+          </div>
+        </div>
+        <div class="profile__portfolio-list">
+          <lm-work-card view="potfolio-view"></lm-work-card>
+          <lm-work-card view="potfolio-view"></lm-work-card>
+          <lm-work-card view="potfolio-view"></lm-work-card>
+          <lm-work-card view="potfolio-view"></lm-work-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <lm-navbar></lm-navbar>
+</div>

@@ -1,0 +1,89 @@
+@import '../../../assets/styles/_variables.styl'
+
+.master-card
+  padding: 20px 25px
+  margin: 0 -25px
+  border-bottom: 1px solid $beige
+  box-sizing: border-box
+  &__header
+    display: flex
+    margin-bottom: 20px
+  &__info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex: 1
+  &__portrait-wrapper
+    width: 30px
+    height: 30px
+    background-color: $beige
+    border-radius: 50%
+    overflow: hidden
+    margin-right: 15px
+    flex: 0 1 30px
+  &__portrait
+    width: 100%
+    height: 100%
+    display: block
+  &__name
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: -0.2px
+    color: $black
+  &__subscribe-btn
+    @extend .active-btn
+  &__gallery
+    display: flex
+    margin: 0 -3px
+    align-items: stretch
+    justify-content space-between
+  &__gallery-item
+    width: 33.33%
+    box-sizing: border-box
+    padding: 0 3px
+    max-height: 100px
+    overflow: hidden
+  &__gallery-img
+    width: 100%
+    height: auto
+    display: block
+&:host([view])
+  max-width: 280px
+  margin: 0 10px
+  .master-card
+      flex-direction: column
+      display: flex
+      padding: 0
+      margin: 0
+      border-bottom: 0
+    .master-card__info
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+    .master-card__name
+      font-size: 22px
+      font-weight: bold
+      line-height: 1.0
+      letter-spacing: -0.8px
+      margin-bottom: 7px
+    .master-card__portrait-wrapper
+      width: 50px
+      height: 50px
+      margin-right: 15px
+      flex: 0 1 50px
+    .master-card__header
+      order: 2
+      margin: 0
+    .master-card__gallery
+      width: 280px
+      height: 370px
+      order: 1
+      margin-bottom: 20px
+      background: greenyellow
+    .master-card__gallery-item
+      width: 100%
+      padding: 0
+      max-height: 370px
+      display: none
+      &:first-child
+        display: block

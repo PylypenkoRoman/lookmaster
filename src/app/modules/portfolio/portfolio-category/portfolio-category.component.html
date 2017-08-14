@@ -1,0 +1,43 @@
+<div class="page-wrapper with-nav-bar">
+  <div class="header">
+    <div routerLink="/portfolio" class="back-btn moved-left">
+      <lm-svg-icon glyph="arrow-right"></lm-svg-icon>
+    </div>
+  </div>
+  <h1 class="page-title">Оберіть категорію</h1>
+  <div class="content">
+    <div *ngIf="categoryList">
+      <ul *ngFor="let category of categoryList" class="portfolio-categories" >
+        <li class="portfolio-categories__item" (click)="chooseCategory(category)">
+          <div class="portfolio-categories__img-wrapper">
+            <img [src]="category.img" class="portfolio-categories__img"/>
+          </div>
+          <h4 class="portfolio-categories__item-title">{{category.title}}</h4>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!categoryList">
+      <p>У вас нет ни одной категории. Добавьте категории</p>
+    </div>
+    <!-- <div class="portfolio-categories">
+      <div routerLink="/portfolio/download" class="portfolio-categories__item">
+        <div class="portfolio-categories__img-wrapper">
+          <img src="../../../assets/img/placeholder.png" class="portfolio-categories__img"/></div>
+        <h4 class="portfolio-categories__item-title">Нігтьовий сервіс</h4>
+      </div>
+      <div routerLink="/portfolio/download" class="portfolio-categories__item">
+        <div class="portfolio-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="portfolio-categories__img"/></div>
+        <h4 class="portfolio-categories__item-title">Нігтьовий сервіс</h4>
+      </div>
+      <div routerLink="/portfolio/download" class="portfolio-categories__item">
+        <div class="portfolio-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="portfolio-categories__img"/></div>
+        <h4 class="portfolio-categories__item-title">Нігтьовий сервіс</h4>
+      </div>
+      <div routerLink="/portfolio/download" class="portfolio-categories__item">
+        <div class="portfolio-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="portfolio-categories__img"/></div>
+        <h4 class="portfolio-categories__item-title">Нігтьовий сервіс</h4>
+      </div>
+    </div> -->
+  </div>
+  <lm-navbar></lm-navbar>
+</div>
