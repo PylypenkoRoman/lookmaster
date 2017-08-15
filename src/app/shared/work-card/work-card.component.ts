@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
   styleUrls: ['./work-card.component.styl']
 })
 export class WorkCardComponent implements OnInit {
+  @Input() view: string;
   workCard: WorkCard;
   workCardId: string;
   constructor() { }

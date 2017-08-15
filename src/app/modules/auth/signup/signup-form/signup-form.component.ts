@@ -25,19 +25,19 @@ userName: string
     else{
       this.passwordFail = false;
       Promise.resolve(this.userSVC.register(this.email, this.password1, this.userName, ))
-        // .then((res) => {
-        //   return this.userSVC.checkLoggedState();
-        // })
         .then((res) => {
           console.log("user created");
+          console.log("user verified start");
           this.userSVC.verifyUser();
+          console.log("user verified end");
         })
         .then((res) => {
-          console.log("user verified");
+          console.log("user object start");
           this.userSVC.createUserObject();
+          console.log("user object end");
         })
         .then((res) => {
-          console.log("user object created");
+          
           this.userSVC.getUserData();
         })
         .then((res) => {

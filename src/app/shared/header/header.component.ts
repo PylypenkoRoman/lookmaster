@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from "app/shared/services/user.service";
 import { Router } from "@angular/router";
 import * as firebase from 'firebase';
-import { MobileSubNavService } from "app/shared/mobile-sub-nav/mobile-sub-nav.service";
 
 @Component({
   selector: 'lm-header',

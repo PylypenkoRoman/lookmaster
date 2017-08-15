@@ -1,13 +1,19 @@
 <div class="mobile-sub-nav">
   <div class="mobile-sub-nav__header"><strong class="logo"><a href="#">lookmaster</a></strong>
     <div (click)="closeMobileSubNav()" class="close-btn moved-right">
-      <lm-svg-icon glyph="cross"></lm-svg-icon>
+      <i class="svg-cross svg-cross-dims"></i>
     </div>
   </div>
   <div class="mobile-sub-nav__content">
     <div class="mobile-sub-nav__list">
-      <div class="mobile-sub-nav__holder"><a routerLinkActive="active" routerLink="/home" class="mobile-sub-nav__item">Головна</a></div>
-      <div class="mobile-sub-nav__holder"><a class="mobile-sub-nav__item">Про нас</a><a class="mobile-sub-nav__item">Як це працює?</a><a class="mobile-sub-nav__item">Для майстрів</a><a class="mobile-sub-nav__item">Для салонів</a></div><a routerLinkActive="active" routerLink="/login" class="mobile-sub-nav__item">Увійти</a><a routerLinkActive="active" routerLink="/signup" class="mobile-sub-nav__item">Зареєструватись</a>
+      <div class="mobile-sub-nav__holder">
+        <a routerLinkActive="active" routerLink="/home" class="mobile-sub-nav__item">Головна</a></div>
+      <div class="mobile-sub-nav__holder">
+        <a class="mobile-sub-nav__item" routerLink="/category">Категории</a>
+        <a class="mobile-sub-nav__item" routerLink="/blog">Блог</a>
+        <a class="mobile-sub-nav__item" routerLink="/blog-admin">Блог-Админ</a>
+        <a class="mobile-sub-nav__item">Про нас</a>
+      </div><a routerLinkActive="active" routerLink="/login" class="mobile-sub-nav__item">Увійти</a><a routerLinkActive="active" routerLink="/signup" class="mobile-sub-nav__item">Зареєструватись</a>
     </div>
     <button class="button rounded small">Я майстер</button>
   </div>

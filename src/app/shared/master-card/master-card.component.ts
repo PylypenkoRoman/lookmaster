@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
   styleUrls: ['./master-card.component.styl']
 })
 export class MasterCardComponent implements OnInit {
+  @Input() view: string;
   masterCard: MasterCard;
   masterCardId: string;
   constructor() { }

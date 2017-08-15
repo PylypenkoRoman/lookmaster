@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PortfolioEditWorkComponent } from './portfolio-edit-work.component';
+import { WorkCardEditComponent } from './work-card-edit.component';
 
-describe('PortfolioEditWorkComponent', () => {
-  let component: PortfolioEditWorkComponent;
-  let fixture: ComponentFixture<PortfolioEditWorkComponent>;
+describe('WorkCardEditComponent', () => {
+  let component: WorkCardEditComponent;
+  let fixture: ComponentFixture<WorkCardEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PortfolioEditWorkComponent ]
+      declarations: [ WorkCardEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PortfolioEditWorkComponent);
+    fixture = TestBed.createComponent(WorkCardEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

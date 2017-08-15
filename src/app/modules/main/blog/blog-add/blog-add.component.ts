@@ -38,6 +38,7 @@ export class BlogAddComponent{
       this.imageSRC.substring(23)
     );
     this.blogSVC.createPost(this.post);
+    
     alert(`${this.postTitle} added to post`)
     this.router.navigate(['/blog']);
   }

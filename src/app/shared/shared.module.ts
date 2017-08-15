@@ -12,7 +12,7 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { UserService } from "app/shared/services/user.service";
 import { SharedRoutingModule } from "app/shared/shared-routing.module";
 import { TruncatePipe } from "app/shared/pipes/trunk.pipe";
-import { MobileSubNavService } from "app/shared/mobile-sub-nav/mobile-sub-nav.service";
+import { WorkCardEditComponent } from "app/shared/work-card-edit/work-card-edit.component";
 
 
 
@@ -26,7 +26,8 @@ import { MobileSubNavService } from "app/shared/mobile-sub-nav/mobile-sub-nav.se
     FooterComponent, 
     SearchBoxComponent, 
     MasterCardComponent, 
-    WorkCardComponent, 
+    WorkCardComponent,
+    WorkCardEditComponent, 
     NavbarComponent, 
     MobileSubNavComponent, 
     SvgIconComponent,
@@ -44,7 +45,6 @@ import { MobileSubNavService } from "app/shared/mobile-sub-nav/mobile-sub-nav.se
     TruncatePipe
     ],
   providers: [
-    MobileSubNavService,
     UserService,
     TruncatePipe
   ]

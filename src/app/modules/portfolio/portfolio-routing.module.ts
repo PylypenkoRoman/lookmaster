@@ -4,7 +4,6 @@ import { PortfolioComponent } from "app/modules/portfolio/portfolio/portfolio.co
 import { PortfolioCategoryComponent } from "app/modules/portfolio/portfolio-category/portfolio-category.component";
 import { PortfolioDownloadComponent } from "app/modules/portfolio/portfolio-download/portfolio-download.component";
 import { PortfolioPhotosComponent } from "app/modules/portfolio/portfolio-photos/portfolio-photos.component";
-import { PortfolioEditWorkComponent } from "app/modules/portfolio/portfolio-edit-work/portfolio-edit-work.component";
 
 const routes: Routes = [
   {
@@ -22,10 +21,6 @@ const routes: Routes = [
   {
     path: 'portfolio/photos',
     component: PortfolioPhotosComponent,
-  },
-  {
-    path: 'edit-work',
-    component: PortfolioEditWorkComponent,
   }
 ];
 

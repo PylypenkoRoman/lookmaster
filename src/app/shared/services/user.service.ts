@@ -67,11 +67,11 @@ export class UserService implements CanActivate{
     firebase.database().ref('users/' + user.uid).set({
       id: this.user.uid,
       userRole: savedUserRole,
-      userName: user.displayName,
-     UserPortrait: this.user.masterPortrait,
+      userName: user.displayName
     }).catch(function(error){
         alert(`${error.message} Unable to create User Object`)
       })
+      console.log(this.user.uid)
   };
 
 

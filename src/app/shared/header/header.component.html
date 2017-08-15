@@ -2,26 +2,23 @@
 <div class="header {{view}}">
 
   <div (click)="openMobileSubNav()" class="mobile-sub-nav-btn">
-    <lm-svg-icon glyph="mobile-nav"></lm-svg-icon>
+    <i class="svg-mobile-nav svg-mobile-nav-dims"></i>
   </div>
+
   <strong class="logo"><a href="#">lookmaster</a></strong>
 
-  <!-- <lm-search-box></lm-search-box> -->
+  <lm-search-box></lm-search-box>
 
   <div class="header__controls">
-    <div class="header__sub-nav">
-      <a routerLink="/category" class="header__sub-nav-item">Категории</a>
-      <a routerLink="/blog" class="header__sub-nav-item">Блог</a>
-      <a routerLink="/blog-admin" class="header__sub-nav-item">Блог-Админ</a>
-    </div>
     <div *ngIf="!user" class="header__sub-nav">
       <a routerLink="/login" class="header__sub-nav-item">Увійти</a>
       <a routerLink="/signup" class="header__sub-nav-item">Зареєструватись</a>
     </div>
     <div *ngIf="user" class="header__sub-nav">
+
+       <a  class="header__sub-nav-item">{{userName}} </a>
+       <a  class="header__sub-nav-item">{{userRole}} </a>
        <a (click)="logout()" class="header__sub-nav-item">Вихід</a>
-       <a  class="header__sub-nav-item">UserName: {{userName}} </a>
-       <a  class="header__sub-nav-item">UserRole: {{userRole}} </a>
     </div>
     </div>
 </div>

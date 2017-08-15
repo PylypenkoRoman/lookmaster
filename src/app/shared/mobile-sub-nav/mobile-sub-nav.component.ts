@@ -19,9 +19,4 @@ export class MobileSubNavComponent{;
     this.navState = false;
     this.navStateChange.emit(this.navState);
   }
-
-  // closeMobileSubNav(){
-  //   this.mobileSubNavSVC.toggleMobileSubNav();
-  // }
-
 }
