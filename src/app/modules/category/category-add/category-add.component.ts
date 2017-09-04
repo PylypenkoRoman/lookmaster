@@ -34,7 +34,7 @@ export class CategoryAddComponent {
       this.imgTitle,
       this.imageSRC.substring(23)
     );
-
+    console.log(this.category)
     this.categorySVC.createCategory(this.category)
   }
 

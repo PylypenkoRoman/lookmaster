@@ -16,6 +16,7 @@ export class PortfolioCategoryComponent implements OnInit {
     this.getCategories()
     console.log(this.categoryList)
   }
+
   getCategories(){
     let dbRef = firebase.database().ref('category/');
     return dbRef.once('value')
@@ -28,6 +29,7 @@ export class PortfolioCategoryComponent implements OnInit {
         console.log(`${error.message} Unable to load categories Try Again! `)
       });
   }
+  
   chooseCategory(category: Category){
     let id = category.id;
     localStorage.setItem('uploadFilesCategoryId', id);
