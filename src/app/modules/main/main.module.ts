@@ -12,6 +12,7 @@ import { BlogService } from "app/modules/main/blog/blog.service";
 import { BlogAddComponent } from './blog/blog-add/blog-add.component';
 import { BlogAdminComponent } from './blog/blog-admin/blog-admin.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
+import { BlogChildComponent } from './blog/blog-child/blog-child.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { BlogPostComponent } from './blog/blog-post/blog-post.component';
     BlogComponent,
     BlogAddComponent,
     BlogAdminComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    BlogChildComponent
   ],
     providers: [
     BlogService

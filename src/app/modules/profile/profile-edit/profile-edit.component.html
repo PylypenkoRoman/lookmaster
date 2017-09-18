@@ -1,20 +1,27 @@
-<!-- <div class="page-wrapper with-bottom-button">
+<div class="page-wrapper with-bottom-button">
   <div class="profile">
     <div class="profile__header">
       <div class="profile__panel">
         <div class="profile__panel-text">Редагування</div>
+
         <div class="profile__panel-btn right">
-          <lm-svg-icon glyph="cross" routerLink="/view"></lm-svg-icon>
+          <svg class="icon icon-cross" routerLink="/profile/view">
+            <use xlink:href="./assets/img/svg/sprite.svg#icon-cross"></use>
+          </svg>
         </div>
       </div>
       <div class="profile__wallpaper"><img src="../../../assets/img/placeholder.png" class="profile__wallpaper-img"/></div>
       <div class="profile__info">
         <div class="profile__info-row bottom">
           <div class="profile__subscribe-btn">Змінити фон
-            <lm-svg-icon glyph="add"></lm-svg-icon>
+            <svg class="icon icon-add">
+              <use xlink:href="./assets/img/svg/sprite.svg#icon-add"></use>
+            </svg>
           </div>
           <div class="profile__portrait"><img src="../../../assets/img/placeholder.png" class="profile__portrait-img"/>
-            <lm-svg-icon glyph="camera"></lm-svg-icon>
+            <svg class="icon icon-camera">
+              <use xlink:href="./assets/img/svg/sprite.svg#icon-camera"></use>
+            </svg>
           </div>
         </div>
       </div>
@@ -24,39 +31,45 @@
         <div class="row">
           <label class="label">Ім'я та прізвище</label>
           <div class="form-control-wrapper">
-            <input type="Text" placeholder="Ім'я та прізвище" value="Hanna Yanicka" class="form-control"/>
+            <input class="form-control" type="text" placeholder="Ім'я та прізвище" 
+            name="editUserName" ngModel="profile.userName" [value]="profile.userName"/>
           </div>
         </div>
         <div class="row">
           <label class="label">Місто</label>
           <div class="form-control-wrapper">
-            <input type="Text" placeholder="Місто" value="Львів" class="form-control"/>
+            <input class="form-control" type="text" placeholder="Місто" 
+            name="editCity" ngModel="profile.city" [value]="profile.city"/>
           </div>
         </div>
         <div class="row">
           <label class="label">Про мене</label>
-          <textarea type="Text" placeholder="Про мене" class="textarea">Breas augmentatio; Affordable Cosmetic Plastic Surgery Philippines"</textarea>
+          <textarea type="text" placeholder="Про мене" class="textarea"
+          ngModel="profile.about" [value]="profile.about" ></textarea>
         </div>
         <div class="row">
           <label class="label">Теги</label>
-          <textarea type="Text" placeholder="Теги" class="textarea">#Hannayanicka, #Lviv, #Ukraine, #Nails, #Hair, #Beautymaster</textarea>
+          <textarea type="text" placeholder="Теги" class="textarea"></textarea>
         </div>
         <div class="row">
           <label class="label">Працюю на дому</label>
           <div class="form-control-wrapper">
-            <input type="Text" placeholder="Домашня Адреса" class="form-control"/>
+            <input type="text" placeholder="Домашня Адреса" class="form-control"/>
           </div>
         </div>
         <div class="row">
           <label class="label">Працюю в салоні</label>
           <div class="form-control-wrapper">
-            <input type="Text" placeholder="Адреса салону" class="form-control"/>
+            <input type="text" placeholder="Адреса салону" class="form-control"/>
           </div>
         </div>
         <div class="checkbox">
-          <input id="check2" type="checkbox" [name]="name1" [checked]="checked"/>
-          <label for="check2" class="checkbox__label">Виїзд на дім
-            <lm-svg-icon glyph="tick"></lm-svg-icon><span class="checkbox__description">Я приїду до клієнта додому</span>
+          <input id="workAtClientHome" type="checkbox" [name]="workAtClientHome" [checked]="workAtClientHome"/>
+          <label for="workAtClientHome" class="checkbox__label">Виїзд на дім
+            <svg class="icon icon-tick" routerLink="/profile/view">
+              <use xlink:href="./assets/img/svg/sprite.svg#icon-tick"></use>
+            </svg>
+            <span class="checkbox__description">Я приїду до клієнта додому</span>
           </label>
         </div>
       </form>
@@ -74,7 +87,9 @@
               <div class="specialty-edit__item-title">Маникюр</div>
             </div>
             <div class="specialty-edit__remove-btn">
-              <lm-svg-icon glyph="cross"></lm-svg-icon>
+              <svg class="icon icon-cross">
+                <use xlink:href="./assets/img/svg/sprite.svg#icon-cross"></use>
+              </svg>
             </div>
           </div>
           <div class="specialty-edit__item">
@@ -83,7 +98,9 @@
               <div class="specialty-edit__item-title">Візаж</div>
             </div>
             <div class="specialty-edit__remove-btn">
-              <lm-svg-icon glyph="cross"></lm-svg-icon>
+              <svg class="icon icon-cross">
+                <use xlink:href="../../../assets/img/svg/sprite.svg#icon-cross"></use>
+              </svg>
             </div>
           </div>
           <div class="specialty-edit__item">
@@ -92,7 +109,9 @@
               <div class="specialty-edit__item-title">Мейкап</div>
             </div>
             <div class="specialty-edit__remove-btn">
-              <lm-svg-icon glyph="cross"></lm-svg-icon>
+              <svg class="icon icon-cross">
+                <use xlink:href="./assets/img/svg/sprite.svg#icon-cross"></use>
+              </svg>
             </div>
           </div>
         </div>
@@ -100,4 +119,4 @@
     </div>
   </div>
   <div routerLink="/home" class="button large fixed-bottom">Зберегти зміни</div>
-</div> -->
+</div>

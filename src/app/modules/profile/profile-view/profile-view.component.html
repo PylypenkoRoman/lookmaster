@@ -3,11 +3,15 @@
     <div class="profile__header">
       <div class="profile__panel">
         <div class="profile__panel-btn left">
-          <lm-svg-icon glyph="share"></lm-svg-icon>
+          <svg class="icon icon-share">
+            <use xlink:href="./assets/img/svg/sprite.svg#icon-share"></use>
+          </svg>
         </div>
         <div class="profile__panel-text">Hanna Yanicka</div>
-        <div class="profile__panel-btn right">
-          <lm-svg-icon glyph="pencil" routerLink="/edit"></lm-svg-icon>
+        <div class="profile__panel-btn right" routerLink="/profile/edit">
+          <svg class="icon icon-pencil">
+            <use xlink:href="./assets/img/svg/sprite.svg#pencil"></use>
+          </svg>
         </div>
       </div>
       <!--.profile__panel.transparent-->
@@ -62,7 +66,9 @@
         <div class="profile__portfolio-header">
           <div class="profile__portfolio-title">Працюю</div>
           <div class="profile__portfolio-all-btn">Усі роботи
-            <lm-svg-icon glyph="add"></lm-svg-icon>
+            <svg class="icon icon-add">
+              <use xlink:href="./assets/img/svg/sprite.svg#icon-add"></use>
+            </svg>
           </div>
         </div>
         <div class="profile__portfolio-list">

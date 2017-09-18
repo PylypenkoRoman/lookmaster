@@ -32,23 +32,18 @@ export class PortfolioPhotosComponent implements OnInit {
     
   filesLoad($event: any){
     let files = $event.target.files;
-    console.log(files)
-    // for (var key in files) {
-    //     var file = files[key];
-    //     console.log(file)
-    //     let myReader:FileReader = new FileReader();
-    //     var fileName = file.name;
-    //     console.log(fileName)
-    //     myReader.readAsDataURL(file);
-    //     myReader.onload = (e: any) => {
-    //       var imageSRC = e.target.result
-    //       console.log(fileName)
-    //       this.fileList.push({
-    //         fileName: fileName,
-    //         imageSRC: imageSRC
-    //       });
-    //     }  
-    // }
+    for (var i = 0, f; f = files[i]; i++) {
+      let myReader:FileReader = new FileReader();
+      var fileName = f.name;
+      myReader.readAsDataURL(f);
+      myReader.onload = (e: any) => {
+        var imageSRC = e.target.result
+        this.fileList.push({
+          fileName: fileName,
+          imageSRC: imageSRC
+        });
+      }  
+    }
     console.log(this.fileList);
   }
 

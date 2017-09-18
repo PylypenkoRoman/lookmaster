@@ -127,7 +127,6 @@ export class UserService implements CanActivate{
 
 
   getUserData(){
-    // Какого хера сюда не подгружается айдишник юзера из сервиса?
     var user = firebase.auth().currentUser;
      firebase.database().ref('/users/' + user.uid).once('value')
      .then((snapshot)=> {

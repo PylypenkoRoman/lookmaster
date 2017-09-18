@@ -1,4 +1,4 @@
-<form class="info-form">
+<form>
   <div class="row">
     <label class="label">Post Title</label>
     <div class="form-control-wrapper">
@@ -15,7 +15,7 @@
     <label class="label"></label>
     <div class="form-control-wrapper">
       <input type="file" (change)="fileLoad($event)"/><br>
-      <img *ngIf="imageSRC" [src]="imageSRC" alt="Image preview..."> 
+      <img class="" *ngIf="imageSRC" [src]="imageSRC" alt="Image preview..."> 
     </div>
   </div>
   <button class="button large" (click)="createPost()" [disabled]="!psContent.valid || !psTitle.valid ">Create Post</button>

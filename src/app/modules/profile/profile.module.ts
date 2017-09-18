@@ -14,6 +14,8 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileSecurityComponent } from './profile-security/profile-security.component';
 import { ProfileScheduleComponent } from './profile-schedule/profile-schedule.component';
 import { SharedModule } from "app/shared/shared.module";
+import { ProfileService } from "app/modules/profile/profile.service";
+import { UserService } from "app/shared/services/user.service";
 
 @NgModule({
   imports: [
@@ -25,6 +27,10 @@ import { SharedModule } from "app/shared/shared.module";
     ProfileEditComponent, ProfileExtensionsComponent, 
     ProfileInfoComponent, ProfileInfoNavComponent, 
     ProfileNotificationsComponent, ProfileNotificationsSettingsComponent, 
-    ProfileViewComponent, ProfileSecurityComponent, ProfileScheduleComponent]
+    ProfileViewComponent, ProfileSecurityComponent, ProfileScheduleComponent],
+  providers: [
+    ProfileService,
+    UserService
+  ]  
 })
 export class ProfileModule { }

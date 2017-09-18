@@ -1,0 +1,6 @@
+<p>Имя пользователя: {{userName}}</p>
+<p>Возраст пользователя: {{userAge}}</p>
+<button (click)="change(true)">+</button>
+<button (click)="change(false)">-</button>
+<label>Dog name:</label>
+<input type="text" [ngModel]="dogName" (ngModelChange)="onNameChange($event)" value="dogName">
