@@ -13,6 +13,8 @@ import { Profile } from "../profile";
 
 export class ProfileEditComponent implements OnInit {
 profile;
+emailPattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+cities = [ "Львів", "Харків", "Одеса", "Київ", "Кривий Ріг" ]
 
   constructor(private profileSVC: ProfileService) {}
 

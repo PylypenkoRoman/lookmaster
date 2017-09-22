@@ -3,6 +3,8 @@ export class Profile{
         // public id: string,
         public userName: string,
         public userRole: string,
+        public email: string,
+        public phone: string,
         public city: string,
         public about: string,
         public payType: string,

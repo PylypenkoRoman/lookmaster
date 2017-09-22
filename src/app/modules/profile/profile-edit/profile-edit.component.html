@@ -54,6 +54,24 @@
           <div *ngIf="userName.invalid && userName.dirty" class="alert alert_danger">We have to know your name!!</div>
         </div>
         <div class="row">
+          <label class="label">Email</label>
+          <div class="form-control-wrapper">
+            <input #email="ngModel" class="form-control" 
+            type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="blabla@gmail.com" 
+            name="email" [(ngModel)]="profile.email"/>
+          </div>
+          <div *ngIf="email.invalid && email.dirty" class="alert alert_danger">We have to know youre mail!!</div>
+        </div>
+        <div class="row">
+          <label class="label">Phone</label>
+          <div class="form-control-wrapper">
+            <input #phone="ngModel" pattern="^\+380\d{3}\d{2}\d{2}\d{2}$" class="form-control" 
+            required type="text" placeholder="+380552299888" 
+            name="phone" [(ngModel)]="profile.phone"/>
+          </div>
+          <div *ngIf="phone.invalid && phone.dirty" class="alert alert_danger">We have to know your phone!!</div>
+        </div>
+        <div class="row">
             <label class="label">Місто</label>
             <div class="form-control-wrapper">
               <select class="form-control" name="userCity" required [(ngModel)]="profile.userCity" placeholder="Місто" >

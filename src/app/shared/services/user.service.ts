@@ -93,6 +93,8 @@ export class UserService {
       id: currentUser.uid,
       userRole: localStorage.getItem('savedUserRole'),
       userName: currentUser.displayName,
+      email: "",
+      phone: "",
       city: "",
       about: "",
       payType: "EUR",

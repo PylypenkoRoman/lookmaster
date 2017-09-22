@@ -33,6 +33,8 @@ editProfile(update: Profile){
           userName: update.userName,
           city: update.city,
           about: update.about,
+          email: update.email,
+          phone: update.phone,
           payType: update.payType,
           salonAddress: update.salonAddress,
           homeAddress: update.homeAddress,

@@ -15,7 +15,6 @@
       <a routerLink="/signup" class="header__sub-nav-item">Зареєструватись</a>
     </div>
     <div *ngIf="user" class="header__sub-nav">
-        <p>forms brunch bla bla bla</p>
        <a  class="header__sub-nav-item">{{userName}} </a>
        <a  class="header__sub-nav-item">{{userRole}} </a>
        <a (click)="logout()" class="header__sub-nav-item">Вихід</a>
