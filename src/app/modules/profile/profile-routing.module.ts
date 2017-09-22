@@ -12,51 +12,67 @@ import { ProfileNotificationsSettingsComponent } from './profile-notifications-s
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileSecurityComponent } from './profile-security/profile-security.component';
 import { ProfileScheduleComponent } from './profile-schedule/profile-schedule.component';
+import { AuthGuard } from "app/shared/guards/auth.guard";
+import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileNavComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'view',
     component: ProfileViewComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'edit',
     component: ProfileEditComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      team: ProfileResolver
+    }
   },
   {
     path: 'info',
     component: ProfileInfoComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'info-nav',
     component: ProfileInfoNavComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'notifications',
     component: ProfileNotificationsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'security',
     component: ProfileSecurityComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'contacts',
     component: ProfileContactsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'schedule',
     component: ProfileScheduleComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'notifications-settings',
     component: ProfileNotificationsSettingsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'extensions',
     component: ProfileExtensionsComponent,
+    canActivate: [AuthGuard],
   }
 ];
 

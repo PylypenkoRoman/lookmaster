@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UserService } from "app/shared/services/user.service";
+import { SharedModule } from "app/shared/shared.module";
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileNavComponent } from './profile-nav/profile-nav.component';
@@ -13,13 +15,17 @@ import { ProfileNotificationsSettingsComponent } from './profile-notifications-s
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileSecurityComponent } from './profile-security/profile-security.component';
 import { ProfileScheduleComponent } from './profile-schedule/profile-schedule.component';
-import { SharedModule } from "app/shared/shared.module";
+import { FormsModule } from "@angular/forms";
 import { ProfileService } from "app/modules/profile/profile.service";
-import { UserService } from "app/shared/services/user.service";
+import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
+
+
+
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     ProfileRoutingModule
   ],
@@ -30,7 +36,7 @@ import { UserService } from "app/shared/services/user.service";
     ProfileViewComponent, ProfileSecurityComponent, ProfileScheduleComponent],
   providers: [
     ProfileService,
-    UserService
+    ProfileResolver
   ]  
 })
 export class ProfileModule { }

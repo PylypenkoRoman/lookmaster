@@ -9,38 +9,28 @@ import * as firebase from 'firebase';
   styleUrls: ['./header.component.styl']
 })
 export class HeaderComponent implements OnInit {
+  authenticated: boolean;
   userName: string;
-  userRole: string;
-  userLoggedIn: boolean;
-  user: any;
+  userRole: any;
   view: string;
   navState: boolean = false;
+
   constructor( private userSVC: UserService, private router: Router) {
-   }
+    this.authenticated = this.userSVC.getAuthenticated();
+    this.userName = this.userSVC.getCurrentUserDisplayName();
+    this.userRole = this.userSVC.userRole
+  
+  }
 
   ngOnInit() {
-    this.user = this.userSVC.user
-    this.userName = this.userSVC.userName
-    this.userRole = this.userSVC.userRole
+    
   }
   
-   openMobileSubNav(){
+  openMobileSubNav(){
     this.navState = true;
   }
 
   logout(){
     this.userSVC.logout();
-    this.userLoggedIn = this.userSVC.userLoggedIn
-    this.router.navigate(['/home']); 
-    Promise.resolve(this.userSVC.logout())
-        .then((res) => {
-          return this.userLoggedIn = this.userSVC.userLoggedIn
-        })
-        .then((res) => {
-          return this.userSVC.verifyUser();
-        })
-        .then((res) => {
-          this.router.navigate(['/home'])
-        });
   }
 }

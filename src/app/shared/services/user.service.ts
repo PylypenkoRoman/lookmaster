@@ -1,39 +1,120 @@
 import { Injectable } from '@angular/core';
-import { CanActivate,
-          Router,
-          ActivatedRouteSnapshot,
-          RouterStateSnapshot 
-       } from '@angular/router'
+import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router'
 import * as firebase from 'firebase';
+import { AngularFireDatabase } from "angularfire2/database";
+import * as Rx from 'rxjs';
 
 @Injectable()
-export class UserService implements CanActivate{
+export class UserService {
+  authState: any = null;
+  userRole;
   userLoggedIn: boolean = false;
-  user: any;
-  uid: string;
-  userName: string;
-  userRole: string
-  email: string;
-  emailVerified: boolean
-  userObject: any[];
 
-
-  constructor( private router: Router) { 
-    firebase.initializeApp({
-        apiKey: "AIzaSyBoq7jXxUoYqjetkcs4tUJv96kTZmpH_y4",
-        authDomain: "lookmaster-1b329.firebaseapp.com",
-        databaseURL: "https://lookmaster-1b329.firebaseio.com",
-        projectId: "lookmaster-1b329",
-        storageBucket: "lookmaster-1b329.appspot.com",
-        messagingSenderId: "80299132004"
-    });
+  constructor( private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router:Router) { 
+    this.afAuth.authState.subscribe((auth) => {
+      this.authState = auth
+   });
+   this.getCurrentUserRole()
   };
 
-  // Функция гвард для допуска на страницы - надо перенести или доработать
-  canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ): boolean {
-    let url: string = state.url;
-    return this.verifyLogin(url)
+  getAuthenticated(): boolean {
+    return this.authState !== null;
   }
+
+  getCurrentUser(): any {
+    return this.getAuthenticated ? this.authState : null;
+  }
+
+  getCurrentUserObservable(): any {
+    return this.afAuth.authState
+  }
+
+  getCurrentUserId(): string {
+    return this.getAuthenticated ? this.authState['uid'] : '';
+  }
+  
+  getCurrentUserDisplayName(): string {
+    if (!this.authState) { return 'Guest' }
+    else { return this.authState['displayName'] || 'User without a Name' }
+  }
+
+  getCurrentUserRole(){
+    if(!this.authState) { return 'Mister Nobody' }
+    let currentUserId = firebase.auth().currentUser.uid
+    let dbRef = firebase.database().ref('users/' + currentUserId);
+    dbRef.once('value')
+        .then((snapshot)=> {
+        this.userRole = snapshot.val().userRole; 
+      });
+  }
+  
+
+  login(email:string, password:string) {
+      return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then((user) => {
+          this.authState = user
+        })
+        .catch(error => console.log(error));
+   }
+    
+   register(email: string, password: string, userName: string){
+    var user
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function () {
+      user = firebase.auth().currentUser;
+      console.log("1")
+    })
+    .then(function () {
+      user.updateProfile({
+        displayName: userName
+      });
+      console.log("2")
+    })
+    .then((user) => {
+      this.createUserObject()
+      console.log("3")
+    })
+    .catch(function(error){
+      alert(`${error.message} Please Try Again!`)
+    })
+
+    console.log('Validation link was sent to ' + email + '.');
+  }
+
+  createUserObject(){
+    console.log("start creation of")
+    let currentUser = firebase.auth().currentUser
+    console.log(currentUser)
+    console.log(currentUser.displayName)
+    console.log(currentUser.uid)
+    firebase.database().ref('users/' + currentUser.uid).set({
+      id: currentUser.uid,
+      userRole: localStorage.getItem('savedUserRole'),
+      userName: currentUser.displayName,
+      city: "",
+      about: "",
+      payType: "EUR",
+      salonAddress: "",
+      homeAddress: "",
+      workAtClientHome: false
+    }).catch(function(error){
+        alert(`${error.message} Unable to create User Object`)
+      })
+  };
+
+  logout(): void {
+      this.afAuth.auth.signOut();
+      this.authState = null;
+      this.router.navigate(['/'])
+  }
+
+  // constructor( private router: Router) { 
+  //   const userKey = Object.keys(window.localStorage).filter(it => it.startsWith('firebase:authUser'))[0];
+  //   const user = userKey ? JSON.parse(localStorage.getItem(userKey)) : undefined;
+  // };
+
 
   verifyLogin(url: string): boolean {
     if(this.userLoggedIn) {return true;}
@@ -41,104 +122,15 @@ export class UserService implements CanActivate{
     return false
   }
 
-  register(email: string, password: string, userName: string){
-    var user = null;
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function () {
-      user = firebase.auth().currentUser;
-      user.sendEmailVerification();
-    })
-    .then(function () {
-      user.updateProfile({
-        displayName: userName
-      });
-    })
-    .catch(function(error){
-      alert(`${error.message} Please Try Again!`)
-    })
-    console.log('Validation link was sent to ' + email + '.');
-  }
-
- 
-
-  createUserObject(){
-    var user = firebase.auth().currentUser;
-    var savedUserRole: string = localStorage.getItem('savedUserRole');
-    firebase.database().ref('users/' + user.uid).set({
-      id: this.user.uid,
-      userRole: savedUserRole,
-      userName: user.displayName
-    }).catch(function(error){
-        alert(`${error.message} Unable to create User Object`)
-      })
-      console.log(this.user.uid)
-  };
-
 
   createMasterCard(){
-    var user = firebase.auth().currentUser;
+    let currentUserId = firebase.auth().currentUser.uid
     let dbRef = firebase.database().ref('masterCards/');
     let newMaster = dbRef.push();
     newMaster.set({
-      userId: user.uid,
+      userId: currentUserId,
       masterId: newMaster.key,
     });
-  };
-
-
-
-  login(loginEmail: string, loginPassword: string) {
-    firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
-      .catch(function(error){
-        alert(`${error.message} Unable to login. Try Again! `)
-      })
-  }
-
-  verifyUser(){
-      this.user = firebase.auth().currentUser;
-      if (this.user != null) {
-        this.userLoggedIn = true;
-        this.userName = this.user.displayName;
-        this.email = this.user.email;
-        this.emailVerified = this.user.emailVerified;
-        this.uid = this.user.uid;
-        // this.photoUrl = this.user.photoURL;
-      } else if (this.user == null ){
-        this.userLoggedIn = false;
-        this.userName = null;
-        this.email = null;
-        this.emailVerified = null
-        this.uid = null;
-      }
-    }
-
-  checkLoggedState(){
-    this.user = firebase.auth().currentUser;
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user != null) {
-        alert("We checked - you logged")
-        // return this.userLoggedIn = true;
-      } else {
-        alert("We checked - you unlogged!!!")
-        // return this.userLoggedIn = false;
-      };
-    });
-  };
-
-
-  getUserData(){
-    var user = firebase.auth().currentUser;
-     firebase.database().ref('/users/' + user.uid).once('value')
-     .then((snapshot)=> {
-      this.userRole = snapshot.val().userRole;
-    });
-  };
-
-  logout(){
-    firebase.auth().signOut().then(function(){
-      }, function(error){
-          alert(`${error.message} Unable to logout. Try Again! `);
-      })
   };
 
 };

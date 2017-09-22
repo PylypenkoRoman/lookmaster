@@ -9,7 +9,6 @@ import { WorkCardComponent } from './work-card/work-card.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MobileSubNavComponent } from './mobile-sub-nav/mobile-sub-nav.component';
 import { SvgIconComponent } from './svg-icon/svg-icon.component';
-import { UserService } from "app/shared/services/user.service";
 import { SharedRoutingModule } from "app/shared/shared-routing.module";
 import { TruncatePipe } from "app/shared/pipes/trunk.pipe";
 import { WorkCardEditComponent } from "app/shared/work-card-edit/work-card-edit.component";
@@ -45,7 +44,6 @@ import { WorkCardEditComponent } from "app/shared/work-card-edit/work-card-edit.
     TruncatePipe
     ],
   providers: [
-    UserService,
     TruncatePipe
   ]
 })
