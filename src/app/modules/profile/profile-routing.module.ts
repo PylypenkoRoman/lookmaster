@@ -15,31 +15,23 @@ import { ProfileScheduleComponent } from './profile-schedule/profile-schedule.co
 import { AuthGuard } from "app/shared/guards/auth.guard";
 import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
 import { ProfileEditReactiveComponent } from "app/modules/profile/profile-edit-reactive/profile-edit-reactive.component";
-import { AuthResolver } from "app/shared/services/auth-resolver.service";
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileNavComponent,
     canActivate: [ AuthGuard ],
-    resolve: {
-      AuthResolver
-    }
   },
   {
     path: 'view',
     component: ProfileViewComponent,
     canActivate: [ AuthGuard ],
-    resolve: {
-      AuthResolver
-    }
   },
   {
     path: 'edit',
     component: ProfileEditComponent,
     resolve: {
       profile: ProfileResolver,
-      AuthResolver
     },
     canActivate: [AuthGuard]
   },
@@ -48,7 +40,7 @@ const routes: Routes = [
     component: ProfileEditReactiveComponent,
     canActivate: [AuthGuard],
     resolve: {
-      team: ProfileResolver
+      profile: ProfileResolver
     }
   },
   {

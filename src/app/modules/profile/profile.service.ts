@@ -23,7 +23,8 @@ getProfile(){
     let dbRef = firebase.database().ref('users/' + this.currentUserId);
     dbRef.once('value')
         .then((snapshot)=> {
-        this.profile = snapshot.val(); 
+           this.profile = snapshot.val(); 
+           return this.profile
         });
 }
 

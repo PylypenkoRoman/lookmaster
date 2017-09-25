@@ -32,5 +32,6 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.userSVC.logout();
+    this.authenticated = false
   }
 }

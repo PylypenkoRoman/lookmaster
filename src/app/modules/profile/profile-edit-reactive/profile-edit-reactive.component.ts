@@ -22,11 +22,10 @@ export class ProfileEditReactiveComponent implements OnInit {
   
     ngOnInit() {
       this.profile = this.profileSVC.profile
-
       this.profileEditForm = new FormGroup({
         userName: new FormControl( this.profile.userName, [
                    Validators.required ]),
-        city: new FormControl( this.profile.city ),
+        city: new FormControl( this.profile.city),
         about: new FormControl( this.profile.about ),
         email: new FormControl( this.profile.email, 
                 [ emailValidator ]),

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AuthResolverService } from './auth-resolver.service';
+import { AuthResolver } from './auth-resolver.service';
 
-describe('AuthResolverService', () => {
+describe('AuthResolver', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthResolverService]
+      providers: [AuthResolver]
     });
   });
 
-  it('should be created', inject([AuthResolverService], (service: AuthResolverService) => {
+  it('should be created', inject([AuthResolver], (service: AuthResolver) => {
     expect(service).toBeTruthy();
   }));
 });

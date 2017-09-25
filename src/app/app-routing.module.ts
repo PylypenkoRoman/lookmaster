@@ -10,12 +10,12 @@ import { AuthResolver } from "app/shared/services/auth-resolver.service";
 
 const appRoutes : Routes = [
 
-  { path: 'main', loadChildren: 'app/modules/main/main.module#MainModule', resolve: {AuthResolver}},
+  { path: 'main', loadChildren: 'app/modules/main/main.module#MainModule'},
   { path: 'auth', loadChildren: 'app/modules/auth/auth.module#AuthModule'},
-  { path: 'collections', loadChildren: 'app/modules/collections/collections.module#CollectionsModule', canActivate: [AuthGuard]},
+  { path: 'collections', loadChildren: 'app/modules/collections/collections.module#CollectionsModule',},
   { path: 'search', loadChildren: 'app/modules/search/search.module#SearchModule'},
-  { path: 'profile', loadChildren: 'app/modules/profile/profile.module#ProfileModule', canActivate: [AuthGuard]},
-  { path: 'category', loadChildren: 'app/modules/category/category.module#CategoryModule', resolve: {AuthResolver}},
+  { path: 'profile', loadChildren: 'app/modules/profile/profile.module#ProfileModule',},
+  { path: 'category', loadChildren: 'app/modules/category/category.module#CategoryModule',},
   { path: 'home', 
     component: HomeComponent, 
     resolve: { AuthResolver } },
