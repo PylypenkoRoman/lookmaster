@@ -1,6 +1,6 @@
 @import '../_variables.styl'
 
-.checkbox
+.radio
   position: relative
   display: flex
   justify-content: space-between
@@ -18,7 +18,7 @@
     letter-spacing: -0.1px
     color: $gray-light
 
-  input[type="checkbox"]
+  input[type="radio"]
     border: 0
     clip: rect(0 0 0 0)
     height: 1px
@@ -27,7 +27,7 @@
     position: absolute
     width: 1px
 
-  input[type="checkbox"] + .checkbox__label
+  input[type="radio"] + .radio__label
     display: block
     padding-right: 30px
     position: relative
@@ -37,7 +37,7 @@
     font-size: 24px
     letter-spacing: -0.2px
     color: $black
-  input[type="checkbox"] + .checkbox__label:before
+  input[type="radio"] + .radio__label:before
     width: 26px
     height: 26px
     border: solid 1px $beige
@@ -49,37 +49,35 @@
     margin-top: -13px
     content: ""
     transition: 0.3s
-  input[type="checkbox"]:checked + .checkbox__label:before
+  input[type="radio"]:checked + .radio__label:before
     border-color: $red
 
-  input[type="checkbox"] + .checkbox__label svg
+  input[type="radio"] + .radio__label:after
     position: absolute
-    right: 3px
     top: 50%
-    margin-top: -10px
-    width: 20px
-    height: 20px
-    box-sizing: border-box
-    line-height: 20px
+    right: 0
+    margin-top: -4px
+    margin-right: 9px
+    width: 8px
+    height: 8px
+    border-radius: 50%
     transition: 0.3s
-    font-size: 20px
-    color: #fff
-  input[type="checkbox"] + .checkbox__label:hover svg
+    background: transparent
+    content: ""
+  input[type="radio"] + .radio__label:after:hover
     color: $gray-light
 
-  input[type="checkbox"]:checked + .checkbox__label
+  input[type="radio"]:checked + .radio__label
     color: $elements-dark
 
-  input[type="checkbox"]:checked + .checkbox__label svg
-    color: $red
+  input[type="radio"]:checked + .radio__label:after
+    background: $red
 
-  // Disabled checkbox
-  input[type="checkbox"]:disabled + .checkbox__label
-
-  input[type="checkbox"]:disabled + .checkbox__label
+  // Disabled radio
+  input[type="radio"]:disabled + .radio__label
     &:checked
       cursor: default
 
-  input[type="checkbox"]:disabled
-    &:checked + .checkbox__label svg
+  input[type="radio"]:disabled
+    &:checked + .radio__label svg
       background: #fff

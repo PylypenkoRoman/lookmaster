@@ -26,7 +26,6 @@ categoryList: Category[]
     return dbRef.once('value')
       .then((snapshot)=> {
           let tmp: string[] = snapshot.val(); 
-          console.log(tmp)
           this.categoryList = Object.keys(tmp).map(key => tmp[key])
       })
       .catch(function(error){

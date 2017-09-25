@@ -15,14 +15,8 @@ export class LoginComponent {
 
   login(){  
     Promise.resolve(this.userSVC.login(this.email, this.password1))
-        // .then((res) => {
-        //   return this.userSVC.checkLoggedState();
-        // })
         .then((res) => {
-          return this.userSVC.verifyUser();
-        })
-        .then((res) => {
-          return this.userSVC.getUserData();
+          return this.userSVC.getCurrentUserRole();
         })
         .then((res) => {
           this.router.navigate(['/home'])

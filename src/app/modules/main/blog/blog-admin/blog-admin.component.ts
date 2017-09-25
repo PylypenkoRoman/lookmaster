@@ -12,7 +12,6 @@ import { Blog } from "../blog";
   styleUrls: ['./blog-admin.component.styl']
 })
 export class BlogAdminComponent implements OnInit {
-  user: string;
   userLoggedIn: boolean;
   tabChoise: string;
   blogPost: Blog[];
@@ -23,11 +22,10 @@ export class BlogAdminComponent implements OnInit {
     private userSVC: UserService,
     private router: Router,
     private blogSVC: BlogService
- 
+
   ) {}
 
   ngOnInit() {
-    this.user = this.userSVC.user
     this.getPosts();
   }
 

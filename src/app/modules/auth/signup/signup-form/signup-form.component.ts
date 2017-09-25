@@ -24,33 +24,20 @@ userName: string
     }
     else{
       this.passwordFail = false;
-      Promise.resolve(this.userSVC.register(this.email, this.password1, this.userName, ))
+      Promise.resolve(this.userSVC.register(this.email, this.password1, this.userName))
         .then((res) => {
-          console.log("user created");
-          console.log("user verified start");
-          this.userSVC.verifyUser();
-          console.log("user verified end");
+          return this.userSVC.getCurrentUserRole();
         })
+        // .then((res) => {
+        //   if(this.userRole == "master"){
+        //     console.log("master card created");
+        //     this.userSVC.createMasterCard()
+        //   }else{
+        //     console.log("user not a master - we don't need master card");
+        //   }
+        // })
         .then((res) => {
-          console.log("user object start");
-          this.userSVC.createUserObject();
-          console.log("user object end");
-        })
-        .then((res) => {
-          
-          this.userSVC.getUserData();
-        })
-        .then((res) => {
-
-          if(this.userRole == "master"){
-            console.log("master card created");
-            this.userSVC.createMasterCard()
-          }else{
-            console.log("user not a master - we don't need master card");
-          }
-        })
-        .then((res) => {
-          console.log("we will navigaet you on homea page");
+          console.log("we will navigaet you on home page");
           this.router.navigate(['/home'])
         });
     }
