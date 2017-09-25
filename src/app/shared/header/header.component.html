@@ -10,11 +10,11 @@
   <lm-search-box></lm-search-box>
 
   <div class="header__controls">
-    <div *ngIf="!user" class="header__sub-nav">
+    <div *ngIf="!authenticated" class="header__sub-nav">
       <a routerLink="/login" class="header__sub-nav-item">Увійти</a>
       <a routerLink="/signup" class="header__sub-nav-item">Зареєструватись</a>
     </div>
-    <div *ngIf="user" class="header__sub-nav">
+    <div *ngIf="authenticated" class="header__sub-nav">
        <a  class="header__sub-nav-item">{{userName}} </a>
        <a  class="header__sub-nav-item">{{userRole}} </a>
        <a (click)="logout()" class="header__sub-nav-item">Вихід</a>

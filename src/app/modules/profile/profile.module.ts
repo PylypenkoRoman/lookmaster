@@ -15,9 +15,10 @@ import { ProfileNotificationsSettingsComponent } from './profile-notifications-s
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { ProfileSecurityComponent } from './profile-security/profile-security.component';
 import { ProfileScheduleComponent } from './profile-schedule/profile-schedule.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileService } from "app/modules/profile/profile.service";
 import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
+import { ProfileEditReactiveComponent } from './profile-edit-reactive/profile-edit-reactive.component';
 
 
 
@@ -26,6 +27,7 @@ import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     ProfileRoutingModule
   ],
@@ -33,7 +35,7 @@ import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
     ProfileEditComponent, ProfileExtensionsComponent, 
     ProfileInfoComponent, ProfileInfoNavComponent, 
     ProfileNotificationsComponent, ProfileNotificationsSettingsComponent, 
-    ProfileViewComponent, ProfileSecurityComponent, ProfileScheduleComponent],
+    ProfileViewComponent, ProfileSecurityComponent, ProfileScheduleComponent, ProfileEditReactiveComponent],
   providers: [
     ProfileService,
     ProfileResolver

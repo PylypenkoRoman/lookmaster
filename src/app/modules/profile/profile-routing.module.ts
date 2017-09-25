@@ -14,12 +14,13 @@ import { ProfileSecurityComponent } from './profile-security/profile-security.co
 import { ProfileScheduleComponent } from './profile-schedule/profile-schedule.component';
 import { AuthGuard } from "app/shared/guards/auth.guard";
 import { ProfileResolver } from "app/modules/profile/profile-resolver.service";
+import { ProfileEditReactiveComponent } from "app/modules/profile/profile-edit-reactive/profile-edit-reactive.component";
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileNavComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'view',
@@ -29,6 +30,14 @@ const routes: Routes = [
   {
     path: 'edit',
     component: ProfileEditComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      team: ProfileResolver
+    }
+  },
+  {
+    path: 'edit-reactive',
+    component: ProfileEditReactiveComponent,
     canActivate: [AuthGuard],
     resolve: {
       team: ProfileResolver

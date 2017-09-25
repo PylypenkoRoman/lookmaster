@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import * as firebase from 'firebase';
 import { ProfileService } from "app/modules/profile/profile.service";
 import { Profile } from "../profile";
+// import { emailValidator } from "app/shared/validators/email.validator2";
 
 @Component({
   selector: 'lm-profile-edit',
@@ -13,7 +14,6 @@ import { Profile } from "../profile";
 
 export class ProfileEditComponent implements OnInit {
 profile;
-emailPattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
 cities = [ "Львів", "Харків", "Одеса", "Київ", "Кривий Ріг" ]
 
   constructor(private profileSVC: ProfileService) {}

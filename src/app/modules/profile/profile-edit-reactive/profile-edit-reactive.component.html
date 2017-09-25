@@ -28,55 +28,41 @@
     </div>
     <div class="profile__content">
       <div>
-        <li  *ngFor="let user of users | async">
-            {{user.$value}}
-        </li>
-        <li  *ngFor="let user of users | async">
-            {{user.uid}}
-        </li>
-        <li *ngFor="let user of users | async">
-            {{user}}
-        </li>
+        <h2>Profile Edit Reactive</h2>
       </div>
       <div>
-        <h2>Profile Edit</h2>
-        <p>{{form.pristine}}</p>
-        <p>Profile: {{profile | json }}</p>
-        <p>Angular: {{ form.value | json }}</p>
       </div>
-      <form #form="ngForm" class="profile__edit-form">
+      <form [formGroup]="profileEditForm" class="profile__edit-form">
         <div class="row">
           <label class="label">Ім'я та прізвище</label>
           <div class="form-control-wrapper">
-            <input #userName="ngModel" class="form-control" 
-            required type="text" placeholder="Ім'я та прізвище" 
-            name="userName" [(ngModel)]="profile.userName"/>
+            <input class="form-control" formControlName="userName" required type="text" placeholder="Ім'я та прізвище" />
           </div>
-          <div *ngIf="userName.invalid && userName.dirty" class="alert alert_danger">We have to know your name!!</div>
+          <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert_danger">
+            <span>We have to know your name!!</span>
+          </div>
         </div>
         <div class="row">
           <label class="label">Email</label>
           <div class="form-control-wrapper">
-            <input #email="ngModel" class="form-control" 
-            type="text" validateEmail placeholder="blabla@gmail.com" 
-            name="email" [(ngModel)]="profile.email"/>
+            <input class="form-control" type="text" placeholder="blabla@gmail.com" formControlName="email"/>
           </div>
-          <div *ngIf="email.invalid && email.dirty" class="alert alert_danger">We have to know youre mail!!</div>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert_danger">
+            <span>We have to know your name!!</span>
+          </div>
         </div>
         <div class="row">
           <label class="label">Phone</label>
           <div class="form-control-wrapper">
-            <input #phone="ngModel" pattern="^\+380\d{3}\d{2}\d{2}\d{2}$" class="form-control" 
-            required type="text" placeholder="+380552299888" 
-            name="phone" [(ngModel)]="profile.phone"/>
+            <input class="form-control" required type="text" placeholder="+380552299888" formControlName="phone" />
           </div>
-          <div *ngIf="phone.invalid && phone.dirty" class="alert alert_danger">We have to know your phone!!</div>
+          <!-- <div *ngIf="phone.invalid && phone.dirty" class="alert alert_danger">We have to know your phone!!</div> -->
         </div>
         <div class="row">
             <label class="label">Місто</label>
             <div class="form-control-wrapper">
-              <select class="form-control" name="userCity" required [(ngModel)]="profile.city" placeholder="Місто" >
-                <option *ngFor="let city of cities">
+              <select class="form-control" formControlName="city" required  placeholder="Місто" >
+                <option *ngFor="let city of cities" [value]="city.value">
                   {{city}}
                 </option>
               </select>
@@ -84,7 +70,7 @@
         </div>
         <div class="row">
           <div class="checkbox">
-            <input id="workAtClientHome" type="checkbox"  [(ngModel)]="profile.workAtClientHome" name="workAtClientHome" />
+            <input id="workAtClientHome" type="checkbox" formControlName="workAtClientHome" />
             <label for="workAtClientHome" class="checkbox__label">Виїзд на дім
               <svg class="icon icon-tick">
                 <use xlink:href="./assets/img/svg/sprite.svg#icon-tick"></use>
@@ -96,34 +82,34 @@
         <div class="row">
           <label class="label">Тип валюти для оплати</label>
           <div class="radio">
-              <input id="eur" type="radio" name="payType" value="EUR" [(ngModel)]="profile.payType" checked/>
+              <input id="eur" type="radio" formControlName="payType" value="EUR" checked/>
               <label class="radio__label" for="eur">EUR
               </label>
             </div>
           <div class="radio">
-              <input id="usd" type="radio" name="payType" [(ngModel)]="profile.payType"  value="USD"/>
+              <input id="usd" type="radio" formControlName="payType" value="USD"/>
               <label class="radio__label" for="usd">USD
               </label>
             </div>
         </div>
         <div class="row">
           <label class="label">Про мене</label>
-          <textarea placeholder="Про мене" class="textarea" [(ngModel)]="profile.about" name="about"> {{profile.about}}</textarea>
+          <textarea placeholder="Про мене" class="textarea" formControlName="about"> {{profile.about}}</textarea>
         </div>
         <div class="row">
           <label class="label">Теги</label>
-          <textarea placeholder="Теги" class="textarea" [(ngModel)]="profile.tagList" name="tagList">{{profile.tagList}}</textarea>
+          <textarea placeholder="Теги" class="textarea">{{profile.tagList}}</textarea>
         </div>
         <div class="row">
           <label class="label">Працюю на дому</label>
           <div class="form-control-wrapper">
-            <input type="text" placeholder="Домашня Адреса" class="form-control" [(ngModel)]="profile.homeAddress" name="homeAddress"/>
+            <input type="text" placeholder="Домашня Адреса" class="form-control" formControlName="homeAddress"/>
           </div>
         </div>
         <div class="row">
           <label class="label">Працюю в салоні</label>
           <div class="form-control-wrapper">
-            <input type="text" placeholder="Адреса салону" class="form-control" [(ngModel)]="profile.workAddress" name="workAddress"/>
+            <input type="text" placeholder="Адреса салону" class="form-control" formControlName="workAddress"/>
           </div>
         </div>
 
@@ -175,5 +161,5 @@
       </div>
     </div>
   </div>
-  <button (click)="editProfile()" type="submit" [disabled]="form.invalid" class="button large fixed-bottom">Зберегти зміни</button>
+  <button (click)="editProfile()" type="submit" class="button large fixed-bottom">Зберегти зміни</button>
 </div>

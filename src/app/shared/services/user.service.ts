@@ -18,7 +18,6 @@ export class UserService {
    });
    this.getCurrentUserRole()
   };
-
   getAuthenticated(): boolean {
     return this.authState !== null;
   }
@@ -50,7 +49,6 @@ export class UserService {
       });
   }
   
-
   login(email:string, password:string) {
       return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((user) => {
@@ -59,36 +57,29 @@ export class UserService {
         .catch(error => console.log(error));
    }
     
-   register(email: string, password: string, userName: string){
+  register(email: string, password: string, userName: string){
     var user
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function () {
       user = firebase.auth().currentUser;
-      console.log("1")
     })
     .then(function () {
       user.updateProfile({
         displayName: userName
       });
-      console.log("2")
     })
     .then((user) => {
       this.createUserObject()
-      console.log("3")
     })
     .catch(function(error){
       alert(`${error.message} Please Try Again!`)
     })
-
     console.log('Validation link was sent to ' + email + '.');
   }
 
   createUserObject(){
     console.log("start creation of")
     let currentUser = firebase.auth().currentUser
-    console.log(currentUser)
-    console.log(currentUser.displayName)
-    console.log(currentUser.uid)
     firebase.database().ref('users/' + currentUser.uid).set({
       id: currentUser.uid,
       userRole: localStorage.getItem('savedUserRole'),
@@ -116,7 +107,6 @@ export class UserService {
   //   const userKey = Object.keys(window.localStorage).filter(it => it.startsWith('firebase:authUser'))[0];
   //   const user = userKey ? JSON.parse(localStorage.getItem(userKey)) : undefined;
   // };
-
 
   verifyLogin(url: string): boolean {
     if(this.userLoggedIn) {return true;}

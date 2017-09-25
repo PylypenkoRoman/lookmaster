@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -24,7 +25,7 @@ import { ProfileService } from "app/modules/profile/profile.service";
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,7 @@ import { ProfileService } from "app/modules/profile/profile.service";
     AngularFireAuthModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     AuthModule,
     MainModule,
     ProfileModule,
