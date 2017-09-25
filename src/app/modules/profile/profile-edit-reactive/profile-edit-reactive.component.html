@@ -62,7 +62,7 @@
             <label class="label">Місто</label>
             <div class="form-control-wrapper">
               <select class="form-control" formControlName="city" required  placeholder="Місто" >
-                <option *ngFor="let city of cities" [value]="city.value">
+                <option *ngFor="let city of cities" [value]="city">
                   {{city}}
                 </option>
               </select>

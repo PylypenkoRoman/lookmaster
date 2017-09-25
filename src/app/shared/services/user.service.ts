@@ -10,7 +10,6 @@ import * as Rx from 'rxjs';
 export class UserService {
   authState: any = null;
   userRole;
-  userLoggedIn: boolean = false;
 
   constructor( private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router:Router) { 
     this.afAuth.authState.subscribe((auth) => {
@@ -108,11 +107,6 @@ export class UserService {
   //   const user = userKey ? JSON.parse(localStorage.getItem(userKey)) : undefined;
   // };
 
-  verifyLogin(url: string): boolean {
-    if(this.userLoggedIn) {return true;}
-    this.router.navigate(['/login']);
-    return false
-  }
 
 
   createMasterCard(){

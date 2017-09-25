@@ -11,7 +11,6 @@ import { Router } from "@angular/router/";
 })
 export class CategoryComponent implements OnInit {
 user: string;
-userLoggedIn: boolean;
 tabChoise: string;
 categoryList: Category[]
 

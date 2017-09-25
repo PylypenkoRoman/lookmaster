@@ -8,7 +8,7 @@ export class AuthResolver implements Resolve<any> {
   constructor(private userSVC: UserService) {}
 
   resolve(): Promise<any>{
-    let authenticated
+    var authenticated
     return new Promise<any>(resolve => setTimeout(resolve, 200))
     .then(() => {
       authenticated = this.userSVC.getAuthenticated();

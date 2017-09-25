@@ -12,7 +12,6 @@ import { Blog } from "../blog";
   styleUrls: ['./blog-admin.component.styl']
 })
 export class BlogAdminComponent implements OnInit {
-  userLoggedIn: boolean;
   tabChoise: string;
   blogPost: Blog[];
   formDisplay: boolean = true;
@@ -35,8 +34,6 @@ export class BlogAdminComponent implements OnInit {
 
   logout(){
     this.userSVC.logout();
-    this.userLoggedIn = this.userSVC.userLoggedIn
-    this.router.navigate(['/home']);  
   }
 
   getPosts(){
