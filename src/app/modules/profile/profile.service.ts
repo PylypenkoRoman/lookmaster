@@ -10,18 +10,18 @@ import { UserService } from "app/shared/services/user.service";
 @Injectable()
 
 export class ProfileService {
-currentUserId;
+currentUser;
 profile: Profile[]
 
 
 constructor( private userSVC: UserService, private router: Router) {
-    this.currentUserId = this.userSVC.getCurrentUserId();
+    this.currentUser = this.userSVC.getCurrentUser();
     this.getProfile()
 }
 
 getProfile(){
-    let dbRef = firebase.database().ref('users/' + this.currentUserId);
-    dbRef.once('value')
+    let dbRef = firebase.database().ref('users/' + this.currentUser.uid);
+    return dbRef.once('value')
         .then((snapshot)=> {
            this.profile = snapshot.val(); 
            return this.profile
@@ -29,7 +29,7 @@ getProfile(){
 }
 
 editProfile(update: Profile){
-    let dbRef = firebase.database().ref('users/').child(this.currentUserId)
+    let dbRef = firebase.database().ref('users/').child(this.currentUser.uid)
         .update({
           userName: update.userName,
           city: update.city,

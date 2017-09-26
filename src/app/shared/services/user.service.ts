@@ -8,35 +8,34 @@ import * as Rx from 'rxjs';
 
 @Injectable()
 export class UserService {
-  authState: any = null;
+  currentUser
+  authState;
   userRole;
 
   constructor( private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router:Router) { 
-    this.afAuth.authState.subscribe((auth) => {
-      this.authState = auth
-   });
-   this.getCurrentUserRole()
+    this.getCurrentUser()
+    this.getCurrentUserRole()
   };
+
+  getCurrentUser(){
+    if(this.currentUser){ 
+      console.log(" we have this current user")
+      console.log(this.currentUser)
+      console.log("---------------------------------------")
+      return this.currentUser
+    }
+    var userKey = Object.keys(window.localStorage).filter(it => it.startsWith('firebase:authUser'))[0];
+    this.currentUser = userKey ? JSON.parse(localStorage.getItem(userKey)) : undefined;
+    console.log(" new one")
+    console.log(this.currentUser)
+    console.log("---------------------------------------")
+    return this.currentUser
+  }
+
   getAuthenticated(): boolean {
     return this.authState !== null;
   }
 
-  getCurrentUser(): any {
-    return this.getAuthenticated ? this.authState : null;
-  }
-
-  getCurrentUserObservable(): any {
-    return this.afAuth.authState
-  }
-
-  getCurrentUserId(): string {
-    return this.getAuthenticated ? this.authState['uid'] : '';
-  }
-  
-  getCurrentUserDisplayName(): string {
-    if (!this.authState) { return 'Guest' }
-    else { return this.authState['displayName'] || 'User without a Name' }
-  }
 
   getCurrentUserRole(){
     if(!this.authState) { return 'Mister Nobody' }
@@ -99,15 +98,11 @@ export class UserService {
   logout(): void {
       this.afAuth.auth.signOut();
       this.authState = null;
+      console.log("logout")
+      this.currentUser = null
+      console.log(this.currentUser)
       this.router.navigate(['/'])
   }
-
-  // constructor( private router: Router) { 
-  //   const userKey = Object.keys(window.localStorage).filter(it => it.startsWith('firebase:authUser'))[0];
-  //   const user = userKey ? JSON.parse(localStorage.getItem(userKey)) : undefined;
-  // };
-
-
 
   createMasterCard(){
     let currentUserId = firebase.auth().currentUser.uid

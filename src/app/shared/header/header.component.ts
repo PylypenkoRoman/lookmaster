@@ -10,14 +10,17 @@ import * as firebase from 'firebase';
 })
 export class HeaderComponent implements OnInit {
   authenticated: boolean;
+  currentUser;
   userName: string;
   userRole: any;
+  authState; any
   view: string;
   navState: boolean = false;
 
   constructor( private userSVC: UserService, private router: Router) {
-    this.authenticated = this.userSVC.getAuthenticated();
-    this.userName = this.userSVC.getCurrentUserDisplayName();
+    this.currentUser = this.userSVC.getCurrentUser();
+    console.log("header info")
+    console.log(this.currentUser)
     this.userRole = this.userSVC.userRole
   
   }
@@ -32,6 +35,6 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.userSVC.logout();
-    this.authenticated = false
+    this.currentUser = null
   }
 }

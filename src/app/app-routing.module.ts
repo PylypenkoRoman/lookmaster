@@ -6,7 +6,6 @@ import { HomeComponent } from "app/modules/main/home/home.component";
 import { UiKitComponent } from "app/modules/main/ui-kit/ui-kit.component";
 import { PageNotFoundComponent } from "app/modules/main/page-not-found/page-not-found.component";
 import { AuthGuard } from "app/shared/guards/auth.guard";
-import { AuthResolver } from "app/shared/services/auth-resolver.service";
 
 const appRoutes : Routes = [
 
@@ -17,8 +16,7 @@ const appRoutes : Routes = [
   { path: 'profile', loadChildren: 'app/modules/profile/profile.module#ProfileModule',},
   { path: 'category', loadChildren: 'app/modules/category/category.module#CategoryModule',},
   { path: 'home', 
-    component: HomeComponent, 
-    resolve: { AuthResolver } },
+    component: HomeComponent },
   { path: 'ui-kit', component: UiKitComponent},
   { path: 'page-not-found', component: PageNotFoundComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},

@@ -46,8 +46,7 @@ import { ProfileService } from "app/modules/profile/profile.service";
   ],
   providers: [
     UserService,
-    AuthGuard,
-    AuthResolver
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
