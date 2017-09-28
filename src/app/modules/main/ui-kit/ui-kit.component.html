@@ -1,1 +1,12 @@
-<!-- тп -->
+<p><span class="boldspan">Form data:</span>{{TestForm.value | json}}</p>
+<p><span class="boldspan">Model data:</span> {{dataModel | json}}</p>
+
+<form #TestForm="ngForm">
+    <lm-list #someValue="ngModel" name="someValue" [(ngModel)]="dataModel"></lm-list>
+</form>
+<br>
+<div *ngIf="someValue.dirty || someValue.touched" >Form was touсhed or changed</div>
+<br>
+<div>Form was touсhed - {{someValue.touched}}</div>
+<br>
+<div>Form was dirty - {{someValue.dirty}}</div>

@@ -20,7 +20,6 @@ import { PortfolioModule } from "app/modules/portfolio/portfolio.module";
 import { CategoryModule } from "app/modules/category/category.module";
 import { UserService } from "app/shared/services/user.service";
 import { AuthGuard } from "app/shared/guards/auth.guard";
-import { AuthResolver } from "app/shared/services/auth-resolver.service";
 import { ProfileService } from "app/modules/profile/profile.service";
 
 @NgModule({

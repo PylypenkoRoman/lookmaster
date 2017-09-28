@@ -31,7 +31,6 @@
     display: inline-block
     line-height: 1
     margin-right: 5px
-  &:active
   &:disabled
     color: $black
     opacity: 0.8
@@ -67,6 +66,16 @@
     background $vkontakte
     &:active
       background: $vkontakte-active
+  &.success
+      background: #449d44;
+  &.info
+      background: #31b0d5;
+  &.warning
+      background: #ec971f
+  &.danger
+      background: #c9302c;
+  &.primary
+      background: #286090;    
   .social-icon
     position: absolute
     width: 22px

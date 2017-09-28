@@ -5,6 +5,7 @@ import { ProfileService } from "app/modules/profile/profile.service";
 import { Profile } from "../profile";
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { emailValidator } from "app/shared/validators/email.validator";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'lm-profile-edit-reactive',
@@ -16,7 +17,7 @@ export class ProfileEditReactiveComponent implements OnInit {
   profileEditForm;
   cities = [ "Львів", "Харків", "Одеса", "Київ", "Кривий Ріг" ]
 
-    constructor(private profileSVC: ProfileService, private formBuilder: FormBuilder) {
+    constructor(private profileSVC: ProfileService, private formBuilder: FormBuilder, private router: Router) {
 
     }
   
@@ -45,6 +46,7 @@ export class ProfileEditReactiveComponent implements OnInit {
     editProfile(){
       console.log(this.profile)
       this.profileSVC.editProfile(this.profile)
+      this.router.navigate(['/view'])
     }
   
   }

@@ -13,6 +13,9 @@ import { BlogAddComponent } from './blog/blog-add/blog-add.component';
 import { BlogAdminComponent } from './blog/blog-admin/blog-admin.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { BlogChildComponent } from './blog/blog-child/blog-child.component';
+import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list/list-item.component';
+import { ListService } from "app/modules/main/list/list.service";
 
 
 @NgModule({
@@ -30,10 +33,13 @@ import { BlogChildComponent } from './blog/blog-child/blog-child.component';
     BlogAddComponent,
     BlogAdminComponent,
     BlogPostComponent,
-    BlogChildComponent
+    BlogChildComponent,
+    ListComponent,
+    ListItemComponent
   ],
     providers: [
-    BlogService
+    BlogService,
+    ListService
   ]
 })
 export class MainModule { }

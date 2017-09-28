@@ -12,6 +12,7 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { SharedRoutingModule } from "app/shared/shared-routing.module";
 import { TruncatePipe } from "app/shared/pipes/trunk.pipe";
 import { WorkCardEditComponent } from "app/shared/work-card-edit/work-card-edit.component";
+import { EmailTDValidator } from './validators/emailTD.validator';
 
 
 
@@ -30,7 +31,8 @@ import { WorkCardEditComponent } from "app/shared/work-card-edit/work-card-edit.
     NavbarComponent, 
     MobileSubNavComponent, 
     SvgIconComponent,
-    TruncatePipe
+    TruncatePipe,
+    EmailTDValidator
   ],
   exports: [
     HeaderComponent, 

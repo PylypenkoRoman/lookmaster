@@ -16,7 +16,7 @@ export class ProfileEditComponent implements OnInit {
 profile;
 cities = [ "Львів", "Харків", "Одеса", "Київ", "Кривий Ріг" ]
 
-  constructor(private profileSVC: ProfileService) {}
+  constructor(private profileSVC: ProfileService, private router: Router) {}
 
   ngOnInit() {
     this.profile = this.profileSVC.profile
@@ -25,6 +25,7 @@ cities = [ "Львів", "Харків", "Одеса", "Київ", "Кривий
   editProfile(){
     console.log(this.profile)
     this.profileSVC.editProfile(this.profile)
+    this.router.navigate(['/view'])
   }
 
 }

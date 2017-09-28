@@ -1,0 +1,11 @@
+<div class="employee">
+  <div class=employee__text-block>
+      <span class=employee__text  *ngIf="!editMode">{{employee.name}}</span>
+      <input class="form-control" (ngModelChange)="onChangeData($event)" (change)="onChange($event)" (blur)="onBlur()" *ngIf="editMode" type="text" [ngModel]="employee.name">
+  </div>
+  <div class=employee__btn-group>
+    <button (click)="edit()" *ngIf="!editMode" class="button warning">Edit</button>
+    <button (click)="delete()" *ngIf="!editMode" class="button danger">Delete</button>
+    <button (click)="save()" *ngIf="editMode" class="button success">Save</button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+<div class="employees">
+  <div claas="employees__list">
+      <lm-list-item (onChangeData)="onChangeData($event)" (itemOnChange)="itemOnChange($event)" (itemOnBlur) ="itemOnBlur($event)" [employee]="singleInnerValue" *ngFor="let singleInnerValue of innerValue"></lm-list-item>
+  </div>
+  <form #form="ngForm" class="employees__form">
+    <div class="form-control-wrapper">
+        <input class="form-control" required (blur)="onBlur()" [(ngModel)]="newInnerValue" #userName="ngModel" name="newInnerValue" type="text">
+    </div>
+    <div class="form-btn-group">
+        <button (click)="add()" [disabled]="form.invalid" class="button success">Add</button>
+    </div>
+  </form>
+</div>

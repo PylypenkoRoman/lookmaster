@@ -47,6 +47,12 @@
       <form #form="ngForm" class="profile__edit-form">
         <div class="row">
           <label class="label">Ім'я та прізвище</label>
+          <p>userName.dirty {{userName.dirty }}</p>
+          <p>userName.pristine {{userName.pristine }}</p>
+          <p>userName.untouched {{ userName.untouched }}</p>
+          <p>userName.touched {{ userName.touched }}</p>
+          <p>userName.valid {{ userName.valid }}</p>
+          <p>userName.unvalid {{ userName.unvalid }}</p>
           <div class="form-control-wrapper">
             <input #userName="ngModel" class="form-control" 
             required type="text" placeholder="Ім'я та прізвище" 
@@ -127,8 +133,6 @@
           </div>
         </div>
 
-        
-        
       </form>
       <div class="specialty-edit">
         <div class="specialty-edit__header">
