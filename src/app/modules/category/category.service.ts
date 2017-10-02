@@ -4,6 +4,12 @@ import { Category } from "app/modules/category/category";
 
 @Injectable()
 export class CategoryService {
+categoryList: Category[]
+
+
+constructor() {
+  this.getCategories();
+}
 
   createCategory(category: Category){
     let storageRef = firebase.storage().ref();
@@ -21,6 +27,18 @@ export class CategoryService {
       });
     };
 
+  getCategories(){
+    let dbRef = firebase.database().ref('category/');
+    return dbRef.once('value')
+      .then((snapshot)=> {
+          let tmp: string[] = snapshot.val(); 
+          this.categoryList = Object.keys(tmp).map(key => tmp[key])
+          return this.categoryList
+      })
+      .catch(function(error){
+        console.log(`${error.message} Unable to load categories Try Again! `)
+      });
+  }
   // editCategory(update: Category){
   //   let dbRef = firebase.database().ref('category/').child(update.id)
   //       .update({

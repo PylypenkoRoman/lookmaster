@@ -1,5 +1,5 @@
 import { Component, forwardRef } from '@angular/core';
-import { Employee } from "app/modules/main/list/employee";
+import { ListItem } from "./list-item";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { ListItemComponent } from "app/modules/main/list/list-item.component";
 
@@ -68,7 +68,7 @@ export class ListComponent implements ControlValueAccessor{
   }
 
   add(){ 
-      this.innerValue.push(new Employee( this.newInnerValue));
+      this.innerValue.push(new ListItem( this.newInnerValue));
       this.newInnerValue = "";
       this.onChangeCallback(this.innerValue);
       console.log("listOnChange")

@@ -9,16 +9,6 @@ export class ProfileResolver implements Resolve<Profile> {
 
   constructor(private profileSVC: ProfileService) { }
 
-  // resolve(): Promise<any>{
-  //   let profile: Profile[]
-  //   return new Promise<any>(resolve => setTimeout(resolve, 1000))
-  //   .then(() => {
-  //     profile = this.profileSVC.profile;
-  //     return profile
-  //   })
-  // }
-
-
   resolve(): Promise<any>{
     let profile: Profile[]
     return Promise.resolve(this.profileSVC.getProfile())
@@ -28,20 +18,4 @@ export class ProfileResolver implements Resolve<Profile> {
       return profile
     })
   }
-
-  // resolve(): Observable<any>{
-  //   let profile: Profile[]
-  //   return this.profileSVC.getProfile();
-  //   }
-  // }
-
-  // resolve(): Promise<any>{
-  //   let profile: Profile[]
-  //   return Promise.resolve(this.profileSVC.getProfile())
-  //     .then((profile) => {
-  //       console.log(profile)
-  //       return profile
-  //     });
-  // }
-
 }

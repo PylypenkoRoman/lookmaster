@@ -17,24 +17,7 @@ categoryList: Category[]
   constructor( private categorySVC: CategoryService, private router: Router  ) { }
 
   ngOnInit() {
-    this.getCategories();
-  }
-
-  getCategories(){
-    let dbRef = firebase.database().ref('category/');
-    return dbRef.once('value')
-      .then((snapshot)=> {
-          let tmp: string[] = snapshot.val(); 
-          this.categoryList = Object.keys(tmp).map(key => tmp[key])
-      })
-      .catch(function(error){
-        console.log(`${error.message} Unable to load categories Try Again! `)
-      });
-  }
-
-  onChanged(){
-    this.getCategories();
-    this.chooseTab('')
+    this.categorySVC.getCategories();
   }
 
   chooseTab(tab: string){

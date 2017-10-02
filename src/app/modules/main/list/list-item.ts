@@ -1,4 +1,4 @@
-export class Employee{
+export class ListItem{
     constructor(
         public name: string,
     ){}

@@ -1,100 +1,24 @@
 <div class="page-wrapper with-nav-bar">
   <div class="header">
-    <div class="search">
-      <input type="search" placeholder="Що шукаєте?" class="search__input"/>
+    <form class="search" (submit)="search(term.value)">
+      <input #term (keyup)="search(term.value)" [value]="terms" type="search"  placeholder="Що шукаєте?" class="search__input"/>
       <lm-svg-icon glyph="search" class="search__icon"></lm-svg-icon>
-    </div>
+    </form>
+    <p>Total results: {{total$ | async}}</p>
   </div>
   <div class="content">
-    <div class="search-tag-list"><span class="search-tag-list__item">#Манікюр</span><span class="search-tag-list__item">#Мелірування</span><span class="search-tag-list__item">#Манікюр</span></div>
     <div class="search-categories">
       <header class="search-categories__header">
         <h3 class="search-categories__title">Послуги</h3><a class="search-categories__all"> Усі послуги
           <lm-svg-icon glyph="next"></lm-svg-icon></a>
       </header>
       <div class="search-categories__list">
-        <div class="search-categories__item">
-          <div class="search-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="search-categories__img"/></div>
-          <h4 class="search-categories__item-title">Нігтьовий сервіс</h4><span class="search-categories__text"><span class="search-categories__counter">15</span>майстрів</span>
-        </div>
-        <div class="search-categories__item">
-          <div class="search-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="search-categories__img"/></div>
-          <h4 class="search-categories__item-title">Нігтьовий сервіс</h4><span class="search-categories__text"><span class="search-categories__counter">15</span>майстрів</span>
-        </div>
-        <div class="search-categories__item">
-          <div class="search-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="search-categories__img"/></div>
-          <h4 class="search-categories__item-title">Нігтьовий сервіс</h4><span class="search-categories__text"><span class="search-categories__counter">15</span>майстрів</span>
-        </div>
-        <div class="search-categories__item">
-          <div class="search-categories__img-wrapper"><img src="../../../assets/img/placeholder.png" class="search-categories__img"/></div>
-          <h4 class="search-categories__item-title">Нігтьовий сервіс</h4><span class="search-categories__text"><span class="search-categories__counter">15</span>майстрів</span>
+        <div class="search-categories__item" *ngFor="let category of items$ | async">
+          <div class="search-categories__img-wrapper"><img [src]="category.img" class="search-categories__img"/></div>
+          <h4 class="search-categories__item-title">{{category.title}}</h4><span class="search-categories__text"><span class="search-categories__counter">15</span>майстрів</span>
         </div>
       </div>
-    </div>
-    <div class="popular-request">
-      <div class="popular-request__title">Популярні запити</div><a href="#" class="popular-request__item">Манікюр</a><a href="#" class="popular-request__item">Педікюр</a><a href="#" class="popular-request__item">Тату послуги</a><a href="#" class="popular-request__item">Гель-лак</a>
-    </div>
-    <div class="search-masters">
-      <header class="search-masters__header">
-        <h3 class="search-masters__title">Послуги</h3><a class="search-masters__all"> Усі послуги
-          <lm-svg-icon glyph="next"></lm-svg-icon></a>
-      </header>
-      <div class="search-masters__list">
-        <div class="search-masters__item">
-          <div class="search-masters__portrait-wrapper"><img src="../../../assets/img/placeholder.png" class="search-masters__portrait"/></div>
-          <div class="search-masters__text-block">
-            <div class="search-masters__name">Hanna Yelevecka</div>
-            <div class="search-masters__info">Доступ до базовох інформації</div>
-          </div>
-        </div>
-        <div class="search-masters__item">
-          <div class="search-masters__portrait-wrapper"><img src="../../../assets/img/placeholder.png" class="search-masters__portrait"/></div>
-          <div class="search-masters__text-block">
-            <div class="search-masters__name">Hanna Yelevecka</div>
-            <div class="search-masters__info">Доступ до базовох інформації</div>
-          </div>
-        </div>
-        <div class="search-masters__item">
-          <div class="search-masters__portrait-wrapper"><img src="../../../assets/img/placeholder.png" class="search-masters__portrait"/></div>
-          <div class="search-masters__text-block">
-            <div class="search-masters__name">Hanna Yelevecka</div>
-            <div class="search-masters__info">Доступ до базовох інформації</div>
-          </div>
-        </div>
-        <div class="search-masters__item">
-          <div class="search-masters__portrait-wrapper"><img src="../../../assets/img/placeholder.png" class="search-masters__portrait"/></div>
-          <div class="search-masters__text-block">
-            <div class="search-masters__name">Hanna Yelevecka</div>
-            <div class="search-masters__info">Доступ до базовох інформації</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="categories-slider">
-      <header class="categories-slider__header">
-        <h3 class="categories-slider__title">Послуги</h3><a class="categories-slider__all"> Усі послуги
-          <lm-svg-icon glyph="next"></lm-svg-icon></a>
-      </header>
-      <div class="categories-slider__holder">
-        <div class="categories-slider__list">
-          <div class="categories-slider__item">
-            <div class="categories-slider__img-wrapper"><img src="../../../assets/img/placeholder.png" class="categories-slider__img"/></div>
-            <h4 class="categories-slider__item-title">Нігтьовий сервіс</h4><span class="categories-slider__text"><span class="categories-slider__counter">15</span>майстрів</span>
-          </div>
-          <div class="categories-slider__item">
-            <div class="categories-slider__img-wrapper"><img src="../../../assets/img/placeholder.png" class="categories-slider__img"/></div>
-            <h4 class="categories-slider__item-title">Нігтьовий сервіс</h4><span class="categories-slider__text"><span class="categories-slider__counter">15</span>майстрів</span>
-          </div>
-          <div class="categories-slider__item">
-            <div class="categories-slider__img-wrapper"><img src="../../../assets/img/placeholder.png" class="categories-slider__img"/></div>
-            <h4 class="categories-slider__item-title">Нігтьовий сервіс</h4><span class="categories-slider__text"><span class="categories-slider__counter">15</span>майстрів</span>
-          </div>
-          <div class="categories-slider__item">
-            <div class="categories-slider__img-wrapper"><img src="../../../assets/img/placeholder.png" class="categories-slider__img"/></div>
-            <h4 class="categories-slider__item-title">Нігтьовий сервіс</h4><span class="categories-slider__text"><span class="categories-slider__counter">15</span>майстрів</span>
-          </div>
-        </div>
-      </div>
+    <lm-pagination [total]="total$ | async" [page]="page" (goTo)="goToPage($event)"></lm-pagination>
     </div>
   </div>
   <lm-navbar></lm-navbar>

@@ -36,6 +36,9 @@ export class CategoryAddComponent {
     );
     console.log(this.category)
     this.categorySVC.createCategory(this.category)
+    this.categoryTitle = "";
+    this.imgTitle = "";
+    this.imageSRC = "";
   }
 
   cancel(){
