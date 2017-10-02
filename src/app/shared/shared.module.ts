@@ -13,6 +13,7 @@ import { SharedRoutingModule } from "app/shared/shared-routing.module";
 import { TruncatePipe } from "app/shared/pipes/trunk.pipe";
 import { WorkCardEditComponent } from "app/shared/work-card-edit/work-card-edit.component";
 import { EmailTDValidator } from './validators/emailTD.validator';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -32,7 +33,8 @@ import { EmailTDValidator } from './validators/emailTD.validator';
     MobileSubNavComponent, 
     SvgIconComponent,
     TruncatePipe,
-    EmailTDValidator
+    EmailTDValidator,
+    PaginationComponent
   ],
   exports: [
     HeaderComponent, 
@@ -42,6 +44,7 @@ import { EmailTDValidator } from './validators/emailTD.validator';
     WorkCardComponent, 
     NavbarComponent, 
     MobileSubNavComponent, 
+    PaginationComponent,
     SvgIconComponent,
     TruncatePipe
     ],
