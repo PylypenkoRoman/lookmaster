@@ -1,11 +1,20 @@
 <div class="page-wrapper with-nav-bar">
   <div class="header">
     <div class="search">
-      <input type="search" placeholder="Що шукаєте?" class="search__input"/>
+      <input type="search" (keyup)="searchTerm$.next($event.target.value)" placeholder="Що шукаєте?" class="search__input"/>
       <lm-svg-icon glyph="search" class="search__icon"></lm-svg-icon>
     </div>
   </div>
   <div class="content">
+  <ul *ngIf="results">
+      <li *ngFor="let result of results | slice:0:9">
+        <a href="{{ result.latest }}" target="_blank">
+          {{ result.name }}
+        </a>
+      </li>
+    </ul>
+  
+  
 
     <!-- <div class="search-tag-list">
         <span class="search-tag-list__item" *ngFor="let tag of tags">{{tag.name}}</span>

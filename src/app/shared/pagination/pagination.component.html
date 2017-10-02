@@ -1,5 +1,5 @@
 <div *ngIf="totalPages() > 1" class="pagination">
   <a *ngIf="page != 1" (click)="pageClicked(prevPage())" class="pagination__item">←</a>
-  <a class="pagination__item" *ngFor="let p of pagesRange()" (click)="pageClicked(p)">{{p}}</a>
+  <a class="pagination__item" [class.active]="page == p" *ngFor="let p of pagesRange()" (click)="pageClicked(p)">{{p}}</a>
   <a *ngIf="totalPages() > page" (click)="pageClicked(nextPage())" class="pagination__item">→</a>
 </div>
